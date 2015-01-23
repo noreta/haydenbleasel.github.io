@@ -1,0 +1,41 @@
+{
+  "name": "haydenbleasel",
+  "version": "1.0.0",
+  "description": "I lead Product Design and Development at Sumry. I like building cool things like Theme Ink. I also design things and write Node modules in my spare time.",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^1.9.1",
+    "del": "*",
+    "gulp": "*",
+    "gulp-favicons": "*",
+    "gulp-ga": "*",
+    "gulp-jade": "*",
+    "gulp-load-plugins": "*",
+    "gulp-htmlmin": "*",
+    "gulp-robots": "*",
+    "gulp-sitemap": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haydenbleasel/haydenbleasel.github.io.git"
+  },
+  "keywords": [
+    "scalable",
+    "website",
+    "scaffold",
+    "gulp"
+  ],
+  "author": "Hayden Bleasel <haydenbleasel@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haydenbleasel/haydenbleasel.github.io/issues"
+  },
+  "homepage": "http://hydn.co/",
+  "private": true
+}

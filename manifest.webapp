@@ -1,0 +1,14 @@
+{
+	"version": "1.0",
+	"name": "hydn.co \/ Hayden Bleasel",
+	"description": "I lead Product Design and Development at Sumry. I like building cool things like Theme Ink. I also design things and write Node modules in my spare time.",
+	"icons": {
+		"60": "\/firefox_app_60x60.png",
+		"128": "\/firefox_app_128x128.png",
+		"512": "\/firefox_app_512x512.png"
+	},
+	"developer": {
+		"name": "Hayden Bleasel",
+		"url": "http:\/hydn.co\/"
+	}
+}
