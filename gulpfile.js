@@ -24,11 +24,14 @@
     gulp.task('compress', ['jade'], function () {
         return gulp.src('index.html')
             .pipe($.robots({ out: 'robots.txt' }))
-            .pipe($.ga({ url: config.homepage, uid: 'UA-46564523-6' }))
             .pipe($.favicons({
                 files: {
                     dest: './',
                     iconsPath: '/'
+                },
+                icons: {
+                    appleStartup: false,
+                    yandex: false
                 },
                 settings: {
                     background: '#00BD9C',
@@ -36,6 +39,7 @@
                     index: 'index.html'
                 }
             }))
+            .pipe($.ga({ url: config.homepage, uid: 'UA-46564523-6' }))
             .pipe($.htmlmin({ collapseWhitespace: true, keepClosingSlash: true, minifyJS: true, minifyCSS: true }))
             .pipe(gulp.dest('./'))
             .pipe($.sitemap({ siteUrl: config.homepage }))
