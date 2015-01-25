@@ -9,9 +9,10 @@
     "gulp": "*",
     "gulp-favicons": "*",
     "gulp-ga": "*",
+    "gulp-htmlmin": "*",
+    "gulp-inject-string": "*",
     "gulp-jade": "*",
     "gulp-load-plugins": "*",
-    "gulp-htmlmin": "*",
     "gulp-robots": "*",
     "gulp-sitemap": "*"
   },
