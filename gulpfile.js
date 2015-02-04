@@ -6,13 +6,8 @@
 
     var gulp = require('gulp'),
         sync = require('browser-sync'),
-        del = require('del'),
         $ = require('gulp-load-plugins')(),
         config = require('./package.json');
-
-    gulp.task('clean', function (next) {
-        return del('.tmp/', next);
-    });
 
     gulp.task('jade', function () {
         return gulp.src('index.jade')
@@ -21,7 +16,7 @@
             .pipe(sync.reload({ stream: true, once: true }));
     });
 
-    gulp.task('compress', ['jade'], function () {
+    gulp.task('default', ['jade'], function () {
         return gulp.src('index.html')
             .pipe($.robots({ out: 'robots.txt' }))
             .pipe($.favicons({
@@ -45,10 +40,6 @@
             .pipe(gulp.dest('./'))
             .pipe($.sitemap({ siteUrl: config.homepage }))
             .pipe(gulp.dest('./'));
-    });
-
-    gulp.task('default', ['clean'], function () {
-        return gulp.start('compress');
     });
 
     gulp.task('browser-sync', ['jade'], function () {

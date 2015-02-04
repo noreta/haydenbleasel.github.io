@@ -4,8 +4,7 @@
   "description": "I lead Product Design and Development at Sumry. I like building cool things like Theme Ink. I also design things and write Node modules in my spare time.",
   "main": "gulpfile.js",
   "devDependencies": {
-    "browser-sync": "^1.9.1",
-    "del": "*",
+    "browser-sync": "*",
     "gulp": "*",
     "gulp-favicons": "*",
     "gulp-ga": "*",
