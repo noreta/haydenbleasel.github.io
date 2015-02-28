@@ -24,96 +24,59 @@ html(lang='en')
         meta(property='twitter:url', content='#{homepage}')
         link(rel='canonical', href='#{homepage}')
         link(rel='favicons', href='logo.png')
-        style
-            | html {
-            |     background: #00BD9C;
-            |     color: #fff;
-            |     line-height: 1.7;
-            |     font-family: Courier, monospace;
-            |     height: 100%;
-            |     cursor: default;
-            |     overflow: hidden;
-            |     padding-top: 20px;
-            | }
-            | body {
-            |     position: fixed;
-            |     bottom: 120px;
-            |     left: 120px;
-            |     width: 620px;
-            |     font-size: 15px;
-            | }
-            | h1 {
-            |     font-weight: normal;
-            |     color: #7FDECD;
-            |     font-size: 15px;
-            | }
-            | h2 {
-            |     font-weight: normal;
-            |     font-size: 21px;
-            | }
-            | span {
-            |     margin: 0 10px;
-            |     color: #33CAAF;
-            | }
-            | a, div a:hover {
-            |     color: #FFF;
-            | }
-            | div a {
-            |     color: #7FDECD;
-            | }
-            | @media (max-width: 920px) {
-            |     body {
-            |         bottom: 60px;
-            |         left: 60px;
-            |         width: 450px;
-            |     }
-            |     body, h1 {
-            |         font-size: 13px;
-            |     }
-            |     h2 {
-            |         font-size: 15px;
-            |     }
-            | }
-            | @media (max-width: 600px) {
-            |     body {
-            |         bottom: 30px;
-            |         left: 30px;
-            |         width: 240px;
-            |     }
-            |     body, h1 {
-            |         font-size: 13px;
-            |     }
-            |     h2 {
-            |         font-size: 15px;
-            |     }
-            |     span {
-            |         display: none;
-            |     }
-            |     div a {
-            |         display: block;
-            |    }
-            | }
+        link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/basics/1.2.2/basics.css')
+        link(rel='stylesheet', href='styles.css', inline)
+        script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+        script(src='scripts.js', inline)
     body
-        h1 hydn.co / Hayden Bleasel
-        h2
-            | I lead Product Design and Development at 
-            a(href='https://sumry.in/') Sumry
-            | . I like building cool things like 
-            a(href='http://theme.ink/') Theme Ink
-            | . I also design interesting things and write Node modules like 
-            a(href='https://github.com/haydenbleasel/catalyst') Catalyst
-            |  and 
-            a(href='https://github.com/haydenbleasel/favicons') Favicons
-            |  in my spare time.
-        div
-            a(href='https://sumry.in/hayden') Sumry
-            span /
-            a(href='https://twitter.com/haydenbleasel') Twitter
-            span /
-            a(href='https://github.com/haydenbleasel') GitHub
-            span /
-            a(href='https://dribbble.com/haydenbleasel') Dribbble
-            span /
-            a(href='https://www.npmjs.com/~haydenbleasel') NPM
-            span /
-            a(href='mailto:haydenbleasel+hydn@gmail.com') Email
+        h1.center Hayden Bleasel
+        h2.center Product designer and full-stack developer.
+        
+        .container
+            .row
+                #dribbble.float-left
+                #github.float-left
+                    ul#connect
+                        li.title Connect
+                        li
+                            a.clearfix(href='https://sumry.in/hayden')
+                                span.float-left Sumry
+                                span.float-right @hayden
+                        li
+                            a.clearfix(href='https://twitter.com/haydenbleasel')
+                                span.float-left Twitter
+                                span.float-right @haydenbleasel
+                        li
+                            a.clearfix(href='https://github.com/haydenbleasel')
+                                span.float-left GitHub
+                                span.float-right @haydenbleasel
+                        li
+                            a.clearfix(href='https://dribbble.com/haydenbleasel')
+                                span.float-left Dribbble
+                                span.float-right @haydenbleasel
+                        li
+                            a.clearfix(href='https://www.npmjs.com/~haydenbleasel')
+                                span.float-left NPM
+                                span.float-right @haydenbleasel
+                        li
+                            a.clearfix(href='mailto:haydenbleasel+hydn@gmail.com')
+                                span.float-left Email
+                                span.float-right Send an email
+                    
+                    ul#projects
+                        li.title Current projects
+                        li
+                            a.clearfix(href='https://sumry.in/')
+                                span.float-left Sumry
+                                span.float-right sumry.in
+                        li
+                            a.clearfix(href='http://theme.ink/')
+                                span.float-left Theme Ink
+                                span.float-right theme.ink
+
+                    ul#sources
+                        li.title Repositories
+                    ul#forks
+                        li.title Contributions
+                    ul#modules
+                        li.title Node Modules

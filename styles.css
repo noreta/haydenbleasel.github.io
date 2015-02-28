@@ -1,0 +1,182 @@
+body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    padding: 120px 0;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #2a3333;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font: italic normal 400 16px/19px 'Georgia', 'Times New Roman', serif;
+    color: #bbb;
+    letter-spacing: 0.4px;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+#dribbble, #github {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 1px;
+}
+
+#dribbble {
+    width: 75%;
+}
+
+#dribbble .shot {
+    width: 33%;
+    float: left;
+    padding: 0 15px;
+}
+
+#dribbble a {
+    margin-bottom: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid #eee;
+}
+
+#dribbble img {
+    display: block;
+}
+
+#github {
+    width: 25%;
+}
+
+ul {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 0 30px;
+    color: #999;
+}
+
+ul .title {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+ul li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.3px;
+}
+
+ul li .float-right {
+    font-size: 10px;
+    letter-spacing: 0.21px;
+    color: #bbb;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 120px auto 0;
+    padding: 0 15px;
+}
+
+.row {
+    margin: 0 -15px;
+    *zoom: 1;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+@media (max-width: 1200px) {
+    #dribbble {
+        width: 70%;
+    }
+    #dribbble .shot {
+        width: 50%;
+    }
+    #github {
+        width: 30%;
+    }
+}
+
+@media (max-width: 992px) {
+    #dribbble {
+        width: 60%;
+    }
+    #dribbble .shot {
+        width: 100%;
+    }
+    #github {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 60px;
+    }
+    #dribbble {
+        width: 100%;
+    }
+    #dribbble a {
+        margin-bottom: 10px;
+    }
+    #dribbble .shot {
+        width: 33%;
+        padding: 0 5px;
+    }
+    #github {
+        margin-top: 60px;
+        width: 100%;
+    }
+    ul {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    h2 {
+        max-width: 180px;
+        margin: 0 auto;
+    }
+    #dribbble .shot {
+        width: 50%;
+    }
+}
