@@ -10,6 +10,7 @@
     "gulp-ga": "*",
     "gulp-htmlmin": "*",
     "gulp-inject-string": "*",
+    "gulp-inline-source": "*",
     "gulp-jade": "*",
     "gulp-load-plugins": "*",
     "gulp-robots": "*",
