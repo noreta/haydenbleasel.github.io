@@ -455,6 +455,12 @@ a.highlight:hover:before, a.highlight:focus:before {
 	footer, footer .text-right {
 		text-align: center;
 	}
+	button, .button {
+		color: #B0976D !important;
+	}
+	button:before, .button:before {
+		display: none;
+	}
 }
 
 /* 0.75 */
