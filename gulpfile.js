@@ -7,13 +7,11 @@
     var gulp = require('gulp'),
         sync = require('browser-sync'),
         $ = require('gulp-load-plugins')(),
-        wiredep = require('wiredep').stream,
         config = require('./package.json');
 
     gulp.task('jade', function () {
         return gulp.src('index.jade')
             .pipe($.jade({ pretty: true, locals: config }))
-            .pipe(wiredep())
             .pipe(gulp.dest('./'))
             .pipe(sync.reload({ stream: true, once: true }));
     });

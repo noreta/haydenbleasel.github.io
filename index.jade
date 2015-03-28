@@ -24,9 +24,12 @@ html(lang='en')
         meta(property='twitter:url', content='#{homepage}')
         link(rel='canonical', href='#{homepage}')
         link(rel='favicons', href='logo.png')
-        <!-- bower:css -->
-        <!-- endbower -->
+        link(rel='stylesheet', href='vendor/animate.css', inline)
+        link(rel='stylesheet', href='vendor/basics.css', inline)
+        link(rel='stylesheet', href='vendor/bootstrap.css', inline)
         link(rel='stylesheet', href='styles.css', inline)
+        script(src='vendor/html5shiv-printshiv.js', inline)
+        script(src='vendor/respond.js', inline)
     body
         #viewport
             header.animated.fadeIn
@@ -131,6 +134,9 @@ html(lang='en')
                             a(href='https://www.npmjs.com/~haydenbleasel') NPM
                         .col-sm-5.text-right
                             a#email(href='mailto:haydenbleasel+hydn@gmail.com') Want to work together?
-        <!-- bower:js -->
-        <!-- endbower -->
+        script(src='vendor/async.js', inline)
+        script(src='vendor/jquery.js', inline)
+        script(src='vendor/async.js', inline)
+        script(src='vendor/fastclick.js', inline)
+        script(src='vendor/scrollReveal.js', inline)
         script(src='scripts.js', inline)
