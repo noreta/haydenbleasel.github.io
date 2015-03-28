@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-    font-family: 'Avenir Next';
+    font-family: 'Avenir Next', 'Helvetica Neue', 'Helvetica', sans-serif;
     background: #1C1C1C;
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: optimizeLegibility;
@@ -63,7 +63,7 @@ h4 {
 }
 
 h5 {
-    font-family: 'Baskerville';
+    font-family: 'Baskerville', serif;
     font-weight: 400;
     font-size: 24px;
     color: #B0976D;
@@ -72,7 +72,7 @@ h5 {
 }
 
 blockquote {
-    font-family: 'Baskerville';
+    font-family: 'Baskerville', serif;
     font-size: 64px;
     color: #fff;
     line-height: 1.15;
@@ -308,7 +308,7 @@ a.highlight:hover:before, a.highlight:focus:before {
 
 #email {
     opacity: 0.8;
-    font-family: 'Baskerville';
+    font-family: 'Baskerville', serif;
     font-size: 12px;
     color: #fff;
     line-height: 14px;
