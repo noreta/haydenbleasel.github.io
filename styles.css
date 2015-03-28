@@ -109,7 +109,8 @@ button, .button {
     -webkit-backface-visibility: hidden;
     z-index: 1;
     overflow: hidden;
-    transition: color 0.4s;
+    -webkit-transition: color 0.4s;
+            transition: color 0.4s;
     -webkit-animation-delay: 1.5s;
 }
 
@@ -122,16 +123,22 @@ button:before, .button:before {
     height: 100%;
     background: #B0976D;
     z-index: -1;
-    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -4em, 0);
-    transform-origin: 0% 100%;
-    transition: transform 0.4s, opacity 0.4s, background-color 0.4s;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -4em, 0);
+            transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -4em, 0);
+    -webkit-transform-origin: 0% 100%;
+        -ms-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s, background-color 0.4s;
+            transition: transform 0.4s, opacity 0.4s, background-color 0.4s;
 }
 
 button:hover:before, .button:hover:before, button:hover:focus, .button:hover:focus {
     opacity: 1;
     background-color: #B0976D;
-    transform: rotate3d(0, 0, 1, 0deg);
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 header {
@@ -152,7 +159,8 @@ footer .container {
     font-size: 12px;
     color: #fff;
     line-height: 16px;
-    transition: opacity 0.4s;
+    -webkit-transition: opacity 0.4s;
+            transition: opacity 0.4s;
     margin-right: 15px;
 }
 
@@ -200,7 +208,8 @@ section .row > div:nth-child(4) {
     color: #B0976D;
     position: relative;
     display: inline-block;
-    transition: transform 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+            transition: transform 0.2s;
 }
 
 a.highlight:before {
@@ -214,18 +223,25 @@ a.highlight:before {
     border: 1px solid #B0976D;
     content: '';
     opacity: 0;
-    transition: opacity 0.2s, transform 0.2s;
-    transform: scale(0.8333);
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
+    -webkit-transform: scale(0.8333);
+        -ms-transform: scale(0.8333);
+            transform: scale(0.8333);
 	-webkit-backface-visibility: hidden;
 }
 
 a.highlight:hover, a.highlight:focus {
-    transform: scale(0.8333);
+    -webkit-transform: scale(0.8333);
+        -ms-transform: scale(0.8333);
+            transform: scale(0.8333);
 }
 
 a.highlight:hover:before, a.highlight:focus:before {
     opacity: 1;
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 .stars {
@@ -285,7 +301,9 @@ a.highlight:hover:before, a.highlight:focus:before {
 #design:before {
     top: 0;
     left: 0;
-    transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+            transform: scaleY(-1);
 }
 
 #email {
@@ -294,7 +312,8 @@ a.highlight:hover:before, a.highlight:focus:before {
     font-size: 12px;
     color: #fff;
     line-height: 14px;
-    transition: opacity 0.4s, color 0.4s;
+    -webkit-transition: opacity 0.4s, color 0.4s;
+            transition: opacity 0.4s, color 0.4s;
 }
 
 #email:hover {
@@ -307,7 +326,8 @@ a.highlight:hover:before, a.highlight:focus:before {
 	color: #fff;
 	opacity: 0.2;
 	font-size: 14px;
-	transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	        transition: opacity 0.2s;
 }
 
 #github a:hover {
@@ -329,9 +349,12 @@ a.highlight:hover:before, a.highlight:focus:before {
 }
 
 #dribbble {
-	perspective: 3000;
-	transform: rotateZ(15deg) scale(1.3);
-	transform-style: preserve-3d;
+	-webkit-perspective: 3000;
+	        perspective: 3000;
+	-webkit-transform: rotateZ(15deg) scale(1.3);
+	        transform: rotateZ(15deg) scale(1.3);
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 	overflow: hidden;
 	position: absolute;
 	width: 100%;
@@ -345,8 +368,10 @@ a.highlight:hover:before, a.highlight:focus:before {
 	float: left;
 	margin: 1%;
 	list-style-type: none;
-	transform-style: preserve-3d;
-	transition: opacity 0.4s;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	-webkit-transition: opacity 0.4s;
+	        transition: opacity 0.4s;
 }
 #dribbble a:before, #dribbble a:after {
 	content: '';
@@ -359,13 +384,19 @@ a.highlight:hover:before, a.highlight:focus:before {
 	background-position: center left;
 }
 #dribbble a:before {
-	transform-origin: left center;
-	transform: rotateY(90deg);
+	-webkit-transform-origin: left center;
+	    -ms-transform-origin: left center;
+	        transform-origin: left center;
+	-webkit-transform: rotateY(90deg);
+	        transform: rotateY(90deg);
 	width: 5px;
 }
 #dribbble a:after {
-	transform-origin: bottom center;
-	transform: rotateX(90deg);
+	-webkit-transform-origin: bottom center;
+	    -ms-transform-origin: bottom center;
+	        transform-origin: bottom center;
+	-webkit-transform: rotateX(90deg);
+	        transform: rotateX(90deg);
 	height: 5px;
 	top: auto;
 	bottom: 0;
