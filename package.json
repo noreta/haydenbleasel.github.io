@@ -14,7 +14,8 @@
     "gulp-jade": "*",
     "gulp-load-plugins": "*",
     "gulp-robots": "*",
-    "gulp-sitemap": "*"
+    "gulp-sitemap": "*",
+    "wiredep": "*"
   },
   "engines": {
     "node": ">=0.10.0"
