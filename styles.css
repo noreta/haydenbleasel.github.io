@@ -456,6 +456,7 @@ a.highlight:hover:before, a.highlight:focus:before {
 		text-align: center;
 	}
 	button, .button {
+		background: transparent !important;
 		color: #B0976D !important;
 	}
 	button:before, .button:before {
