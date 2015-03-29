@@ -7,7 +7,6 @@
     "browser-sync": "*",
     "gulp": "*",
     "gulp-favicons": "*",
-    "gulp-ga": "*",
     "gulp-htmlmin": "*",
     "gulp-inject-string": "*",
     "gulp-inline-source": "*",

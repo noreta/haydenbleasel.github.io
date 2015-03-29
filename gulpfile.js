@@ -34,7 +34,6 @@
                     index: 'index.html'
                 }
             }))
-            .pipe($.ga({ url: config.homepage, uid: 'UA-46564523-6' }))
             .pipe($.injectString.before('<style>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />\n'))
             .pipe($.inlineSource())
             .pipe($.htmlmin({ collapseWhitespace: true, keepClosingSlash: true, minifyJS: true, minifyCSS: true }))
