@@ -34,7 +34,7 @@
                     index: 'index.html'
                 }
             }))
-            .pipe($.injectString.before('<style>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />\n'))
+            .pipe($.injectString.before('</head>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />'))
             .pipe($.inlineSource())
             .pipe($.htmlmin({
                 collapseWhitespace: true,
