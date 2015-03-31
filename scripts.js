@@ -1,4 +1,4 @@
-/*jslint browser:true, unparam:true, devel:true*/
+/*jslint browser:true, unparam:true, newcap:true*/
 /*global $, scrollReveal, async, FastClick*/
 
 $(function () {
@@ -8,8 +8,8 @@ $(function () {
 
     // Start ScrollReveal
     window.sr = new scrollReveal({
-        viewport: $('#viewport')[0],
-        vFactor:  0.4
+        vFactor:  0.4,
+        mobile: true
     });
 
     // Start FastClick
@@ -55,7 +55,7 @@ $(function () {
         per_page: '100'
     }, function (shots) {
         $.each(shots, function (index, shot) {
-            $('#dribbble').append('<div class="shot"><a href="' + shot.html_url + '"><img src="' + shot.images.hidpi + '" alt="' + shot.title + '" /></a></div>');
+            $('#dribbble').append('<div class="shot"><a href="' + shot.html_url + '"><img src="' + shot.images.hidpi + '" alt="' + shot.title + '" width="800" height="600" /></a></div>');
         });
     });
 
