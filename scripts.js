@@ -8,8 +8,7 @@ $(function () {
 
     // Start ScrollReveal
     window.sr = new scrollReveal({
-        vFactor:  0.4,
-        mobile: true
+        vFactor:  0.4
     });
 
     // Start FastClick
