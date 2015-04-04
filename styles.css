@@ -456,6 +456,37 @@ a.highlight:hover:before, a.highlight:focus:before {
 	opacity: 0.3;
 }
 
+#awwwards{
+	position: absolute;
+	width: 126px;
+	height: 126px;
+	text-indent: -666em;
+	overflow: hidden;
+	z-index: 999;
+    transition: all 1s ease;
+	top: 0;
+	right: 0;
+}
+
+#awwwards a{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 126px;
+	height: 126px;
+	background-image: url(awwwards.png);
+	background-repeat: no-repeat;
+	background-position: 4px -23px;
+	background-size: 145px 145px;
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2),	only screen and (min-device-pixel-ratio: 1.5) {
+	#awwwards a{
+		background-image: url(awwwards@2x.png);
+	}
+}
+
 /* 0.8*/
 @media (max-width: 991px) {
 	h1 {
