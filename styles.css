@@ -324,8 +324,6 @@ a.highlight:hover:before, a.highlight:focus:before {
 	content: "\e601";
 }
 
-
-
 #personality:before {
 	left: 0;
     bottom: 0;
@@ -412,6 +410,7 @@ a.highlight:hover:before, a.highlight:focus:before {
 	top: 0;
 	left: 0;
 }
+
 #dribbble a {
 	display: block;
 	width: 23%;
@@ -424,6 +423,7 @@ a.highlight:hover:before, a.highlight:focus:before {
 	-webkit-transition: opacity 0.4s;
 	        transition: opacity 0.4s;
 }
+
 #dribbble a:before, #dribbble a:after {
 	content: '';
 	position: absolute;
@@ -434,6 +434,7 @@ a.highlight:hover:before, a.highlight:focus:before {
 	background: inherit;
 	background-position: center left;
 }
+
 #dribbble a:before {
 	-webkit-transform-origin: left center;
 	    -ms-transform-origin: left center;
@@ -453,23 +454,25 @@ a.highlight:hover:before, a.highlight:focus:before {
 	bottom: 0;
 	background-position: bottom center;
 }
+
 #dribbble a:hover, #dribbble a:focus {
 	opacity: 0.3;
 }
 
-#awwwards{
+#awwwards {
 	position: absolute;
 	width: 126px;
 	height: 126px;
 	text-indent: -666em;
 	overflow: hidden;
 	z-index: 999;
-    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease;
 	top: 0;
 	right: 0;
 }
 
-#awwwards a{
+#awwwards a {
 	position: absolute;
 	top: 0;
 	left: 0;
