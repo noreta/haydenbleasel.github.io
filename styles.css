@@ -224,7 +224,8 @@ section {
     overflow: hidden;
 }
 
-section:nth-child(even):before {
+
+#personality:before, #design:before, #quote:before {
     content: "";
     position: absolute;
     background: url('dots.png') no-repeat center center;
@@ -233,8 +234,8 @@ section:nth-child(even):before {
     background-size: 1440px;
 }
 
-section:nth-child(odd) {
-    background: #1F2121;
+#work, #code {
+	background: #1F2121;
 }
 
 section .row > div:nth-child(1) {
