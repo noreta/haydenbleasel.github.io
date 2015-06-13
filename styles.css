@@ -1,0 +1,86 @@
+@font-face {
+	font-family: 'hydn';
+	src:url('fonts/hydn.eot?-5zuxxu');
+	src:url('fonts/hydn.eot?#iefix-5zuxxu') format('embedded-opentype'),
+		url('fonts/hydn.ttf?-5zuxxu') format('truetype'),
+		url('fonts/hydn.woff?-5zuxxu') format('woff'),
+		url('fonts/hydn.svg?-5zuxxu#hydn') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+i {
+	font-family: 'hydn';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-down:before {
+	content: "\e600";
+}
+.icon-right:before {
+	content: "\e601";
+}
+.icon-soundcloud:before {
+	content: "\e602";
+}
+.icon-dribbble:before {
+	content: "\e603";
+}
+.icon-github:before {
+	content: "\e604";
+}
+.icon-instagram:before {
+	content: "\e605";
+}
+.icon-twitter:before {
+	content: "\e606";
+}
+
+/* Base */
+
+#awwwards{
+	position: absolute;
+	top: 20px;
+	width: 90px;
+	height: 135px;
+	text-indent: -666em;
+	overflow: hidden;
+	z-index: 999;
+
+	-webkit-transition: all 1s ease;
+    transition: all 1s ease;
+	top: 60px;
+	left: 0;
+}
+
+#awwwards a{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 90px;
+	height: 135px;
+	background-repeat: no-repeat;
+	background-size: 90px 135px;
+}
+
+/* NOMINEE */
+
+#awwwards a {
+	background-image: url(ribbons/awwwards_nominee_white_left.png);
+}
+
+@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2),	only screen and (min-device-pixel-ratio: 1.5) {
+	#awwwards a {
+		background-image: url(ribbons/awwwards_nominee_white_left@2x.png);
+	}
+}
