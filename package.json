@@ -1,7 +1,7 @@
 {
   "name": "haydenbleasel",
-  "version": "1.0.0",
-  "description": "I lead Product Design and Development at Sumry. I like building cool things like Theme Ink. I also design things and write Node modules in my spare time.",
+  "version": "2.0.0",
+  "description": "The portfolio of Hayden Bleasel - Product Designer and Full-Stack Web Developer.",
   "main": "gulpfile.js",
   "devDependencies": {
     "browser-sync": "*",
