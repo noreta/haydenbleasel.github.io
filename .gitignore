@@ -51,5 +51,14 @@ $RECYCLE.BIN/
 *.lnk
 
 
-### Custom ###
-config.codekit
+### Build ###
+build/*.html
+build/*.js
+build/*.css
+build/*.png
+build/*.xml
+build/*.json
+build/*.ico
+build/*.txt
+build/*.webapp
+!build/logo.png

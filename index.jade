@@ -24,10 +24,102 @@ html(lang='en')
         meta(property='twitter:url', content='#{homepage}')
         link(rel='canonical', href='#{homepage}')
         link(rel='favicons', href='logo.png')
+        link(rel='stylesheet', href='vendor/normalize.css', inline)
         link(rel='stylesheet', href='vendor/basics.css', inline)
+        link(rel='stylesheet', href='vendor/fullpage.css', inline)
         link(rel='stylesheet', href='styles.css', inline)
+        <!--[if lt IE 9]>
         script(src='vendor/html5shiv-printshiv.js', inline)
+        <![endif]-->
+    body.hidden
+        .container
+            #instagram
+                //- #awwwards
+                    a(href='http://www.awwwards.com/best-websites/hydn-co', target='_blank') Awwwards
+                .meta.clearfix
+                    .left
+                        i.icon-heart
+                        span#count 345
+                        a.button#link(href='#')
+                            span View photo
+                            i.icon-right
+                    .right
+                        i.icon-instagram
+            #information(data-spy="scroll", data-target="#nav")
+                section
+                    article
+                        h1 Hayden Bleasel
+                        hr
+                        //- p I’m a Product Designer at Palantir, currently living in San Francisco, CA. I’m also Head of Product at Sumry and the creator of Resume Tracker. I like working on side projects and meeting new people, so let me know if you want to talk!
+                        p I’m a Product Designer and Full-Stack Developer at Sumry, currently living in Sydney, Australia. I like working on side projects and meeting new people, so let me know if you want to talk!
+                        a.button(href='#career')
+                            span Learn more
+                            i.icon-down
+                        a.button(href='mailto:haydenbleasel+hydn@gmail.com')
+                            span Contact me
+                            i.icon-right
+                        .social
+                            a(href='https://twitter.com/haydenbleasel', target='_blank')
+                                i.icon-twitter
+                            a(href='https://instagram.com/hayden.bleasel', target='_blank')
+                                i.icon-instagram
+                            a(href='https://soundcloud.com/haydenbleasel', target='_blank')
+                                i.icon-soundcloud
+                            a(href='https://dribbble.com/haydenbleasel', target='_blank')
+                                i.icon-dribbble
+                            a(href='https://github.com/haydenbleasel', target='_blank')
+                                i.icon-github
+                section
+                    article
+                        h2 Career
+                        hr
+                        //- p As mentioned, I’m currently a Product Designer at Palantir and Head of Product at Sumry. I’ve also been a freelancer, full-stack developer, peer tutor, web automation architect and even co-founder. Check out my Sumry for my full story.
+                        p As mentioned, I’m currently a Product Designer and Full-Stack Developer at Sumry. I’ve also been a freelancer, interface designer, peer tutor, web automation architect and even co-founder. Check out my Sumry for my full story.
+                        a.button(href='https://sumry.me/hayden', target='_blank')
+                            span View my Sumry
+                            i.icon-right
+                section
+                    article
+                        h2 Education
+                        hr
+                        p I’m currently studying a Bachelor of Science in Information Technology / Bachelor of Business at the University of Technology, Sydney. I taught myself full-stack (responsive) web development, branding, product design and typography.
+                        a.button(href='https://dribbble.com/haydenbleasel', target='_blank')
+                            span View my Dribbble
+                            i.icon-right
+                        a.button(href='https://github.com/haydenbleasel', target='_blank')
+                            span View my GitHub
+                            i.icon-right
+                section
+                    article
+                        h2 Design
+                        hr
+                        p I design interfaces and products that are simple, feasible and solve a problem before thinking about making it pretty. This is how I work:
+                        ol
+                            li
+                                span Draft: Understand what users need.
+                                    span.hide-mobile &nbsp;Wireframes, sketches, mockups. Follow Occam’s Razor.
+                            li
+                                span Share: Good design is for everyone.
+                                    span.hide-mobile &nbsp;Use InVision / Dropbox to iterate and gather feedback.
+                            li
+                                span Explore: Ideas are never complete.
+                                    span.hide-mobile &nbsp;Work on some radical redesigns of the product for fun.
+                section
+                    article
+                        h2 Code
+                        hr
+                        p I’m an avid JavaScript developer. I’ve written tools that got the attention of Google and Mozilla and contributed to huge projects like Bootstrap and Yeoman. I built this site using my open-source projects.
+                            span.hide-mobile &nbsp;Here are a few of them:
+                        canvas#canvas.hide-mobile(width='360',height='200')
+
         script(src='vendor/respond.js', inline)
+        script(src='vendor/jquery.js', inline)
+        script(src='vendor/async.js', inline)
+        script(src='vendor/fastclick.js', inline)
+        script(src='vendor/trmix.js', inline)
+        script(src='vendor/chart.js', inline)
+        script(src='vendor/fullpage.js', inline)
+        script(src='scripts.js', inline)
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -35,9 +127,3 @@ html(lang='en')
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             ga('create', 'UA-46564523-6', 'auto');
             ga('send', 'pageview');
-    body
-        #awwwards
-            a(href='http://www.awwwards.com/best-websites/hydn-co', target='_blank') Awwwards
-        script(src='vendor/jquery.js', inline)
-        script(src='vendor/fastclick.js', inline)
-        script(src='scripts.js', inline)
