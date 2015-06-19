@@ -88,10 +88,10 @@ $ ->
             labels: repositories.labels
             datasets: [ {
                 label: 'Stargazers'
-                fillColor: 'rgba(96,101,115,0.25)'
-                strokeColor: 'rgba(96,101,115,0)'
-                highlightFill: 'rgba(96,101,115,0.5)'
-                highlightStroke: 'rgba(96,101,115,0)'
+                fillColor: '#D8D9DC'
+                strokeColor: '#D8D9DC'
+                highlightFill: '#B0B2B9'
+                highlightStroke: '#B0B2B9'
                 data: repositories.data
             } ]
         }, showScale: false)
