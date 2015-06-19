@@ -83,8 +83,8 @@
                     index: 'index.html'
                 }
             })))
-            .pipe($.minifyInline())
             .pipe($.inlineSource({ compress: false }))
+            .pipe($.minifyInline())
             .pipe($.minifyHtml({ empty: true, spare: true, quotes: true }))
             .pipe(gulp.dest('./'))
             .pipe($.sitemap({ siteUrl: config.homepage }))
