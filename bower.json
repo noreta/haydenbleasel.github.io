@@ -1,0 +1,28 @@
+{
+  "name": "haydenbleasel.github.io",
+  "version": "3.0.0",
+  "homepage": "https://github.com/haydenbleasel/haydenbleasel.github.io",
+  "authors": [
+    "Hayden Bleasel <haydenbleasel@gmail.com>"
+  ],
+  "description": "The portfolio of Hayden Bleasel - Product Designer and Full-Stack Web Developer.",
+  "main": "index.jade",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "basics": "~1.2.2",
+    "fullpage.js": "fullpage#~2.7.2",
+    "respond": "~1.4.2",
+    "jquery": "~2.1.4",
+    "async": "~1.4.2",
+    "fastclick": "~1.0.6",
+    "normalize-css": "normalize.css#~3.0.3",
+    "Chart.js": "~1.0.2"
+  }
+}

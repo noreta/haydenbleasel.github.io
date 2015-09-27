@@ -1,0 +1,4 @@
+{
+  "header": "Catalyst",
+  "out": "test/dist/humans.txt"
+}

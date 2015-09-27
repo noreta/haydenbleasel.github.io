@@ -1,0 +1,14 @@
+{
+  "files": {
+    "dest": "./",
+    "iconsPath": "/"
+  },
+  "icons": {
+    "appleStartup": false,
+    "yandex": false
+  },
+  "settings": {
+    "background": "#FFFFFF",
+    "index": "index.html"
+  }
+}
