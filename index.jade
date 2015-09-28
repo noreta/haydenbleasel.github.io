@@ -31,82 +31,52 @@ html(lang='en')
         <!--[if lt IE 9]>
         script(src='vendor/html5shiv-printshiv.js', inline)
         <![endif]-->
-    body.hidden
-        .container
-            #instagram
-                #awwwards
-                    a(href='http://www.awwwards.com/best-websites/hydn-co-1/', target='_blank') Awwwards
-                .meta.clearfix
-                    .left
-                        i.icon-heart
-                        span#count 345
-                        a.button#link(href='#')
-                            span View photo
-                            i.icon-right
-                    .right
-                        i.icon-instagram
-            #information(data-spy="scroll", data-target="#nav")
-                section
-                    article
-                        h1 Hayden Bleasel
-                        hr
-                        p I’m a Product Designer and Full-Stack Developer currently living in Sydney, Australia. I like working on side projects and meeting new people, so let me know if you want to talk!
-                        a.button(href='#career')
-                            span Learn more
-                            i.icon-down
-                        a.button(href='mailto:haydenbleasel+hydn@gmail.com')
-                            span Contact me
-                            i.icon-right
-                        .social
-                            a(href='https://twitter.com/haydenbleasel', target='_blank')
-                                i.icon-twitter
-                            a(href='https://instagram.com/hayden.bleasel', target='_blank')
-                                i.icon-instagram
-                            a(href='https://soundcloud.com/haydenbleasel', target='_blank')
-                                i.icon-soundcloud
-                            a(href='https://dribbble.com/haydenbleasel', target='_blank')
-                                i.icon-dribbble
-                            a(href='https://github.com/haydenbleasel', target='_blank')
-                                i.icon-github
-                section
-                    article
-                        h2 Career
-                        hr
-                        p I'm currently a Product Design intern at Palantir. I’ve also been a freelancer, interface designer, peer tutor, web automation architect and even co-founder.
-                section
-                    article
-                        h2 Education
-                        hr
-                        p I’m currently studying a Bachelor of Science in Information Technology / Bachelor of Business at the University of Technology, Sydney. I taught myself full-stack (responsive) web development, branding, product design and typography.
-                        a.button(href='https://dribbble.com/haydenbleasel', target='_blank')
-                            span View my Dribbble
-                            i.icon-right
-                        a.button(href='https://github.com/haydenbleasel', target='_blank')
-                            span View my GitHub
-                            i.icon-right
-                section
-                    article
-                        h2 Design
-                        hr
-                        p I design interfaces and products that are simple, feasible and solve a problem before thinking about making it pretty. This is how I work:
-                        ol
-                            li
-                                span Draft: Understand what users need.
-                                    span.hide-mobile &nbsp;Wireframes, sketches, mockups. Follow Occam’s Razor.
-                            li
-                                span Share: Good design is for everyone.
-                                    span.hide-mobile &nbsp;Use InVision / Dropbox to iterate and gather feedback.
-                            li
-                                span Explore: Ideas are never complete.
-                                    span.hide-mobile &nbsp;Work on some radical redesigns of the product for fun.
-                section
-                    article
-                        h2 Code
-                        hr
-                        p I’m an avid JavaScript developer. I’ve written tools that got the attention of Google and Mozilla and contributed to huge projects like Bootstrap and Yeoman. I built this site using my open-source projects.
-                            span.hide-mobile &nbsp;Here are a few of them:
-                        canvas#canvas.hide-mobile(width='360',height='200')
-
+    body(data-spy="affix", data-offset-top="40")
+        
+        nav
+            .container
+                img#logo
+                #links
+                    a(href="#home") Home
+                    a(href="#blog") Blog
+                    a(href="#design") Design
+                    a(href="#code") Code
+                    a(href="#photos") Photos
+                    a(href="#music") Music
+                #social
+                    a(href='https://twitter.com/haydenbleasel', target='_blank')
+                        i.fa.fa-twitter
+                    a(href='https://instagram.com/hayden.bleasel', target='_blank')
+                        i.fa.fa-instagram
+                    a(href='https://dribbble.com/haydenbleasel', target='_blank')
+                        i.fa.fa-dribbble
+                    a(href='https://soundcloud.com/haydenbleasel', target='_blank')
+                        i.fa.fa-soundcloud
+                    a(href='https://github.com/haydenbleasel', target='_blank')
+                        i.fa.fa-github
+                    a(href='https://medium.com/@haydenbleasel', target='_blank')
+                        i.fa.fa-medium
+                    a(href='https://angel.co/haydenbleasel', target='_blank')
+                        i.fa.fa-angellist
+                    a(href='http://twitch.tv/haydenbleasel', target='_blank')
+                        i.fa.fa-twitch
+                    a(href='https://steamcommunity.com/id/haydenbleasel', target='_blank')
+                        i.fa.fa-steam
+        
+        include ./pages/home.jade
+        include ./pages/blog.jade
+        include ./pages/design.jade
+        include ./pages/code.jade
+        include ./pages/photos.jade
+        include ./pages/music.jade
+        
+        footer.container
+            p © 2015 — Hayden Bleasel. All rights reserved.
+            p I designed and built the 
+                span#resolution 4,301,280
+                |  pixels on this page.
+            p Basically every photo taken by 
+                a(href="http://www.maryannemade.com/") Maryanne Nguyen
         <!-- bower:js -->
         <!-- endbower -->
         script(src='scripts.js', inline)

@@ -15,7 +15,7 @@
     "gulp-colorguard": "*",
     "gulp-combine-media-queries": "*",
     "gulp-complexity": "*",
-    "gulp-concat": "*",
+    "gulp-concat": "^2.6.0",
     "gulp-csso": "*",
     "gulp-favicons": "*",
     "gulp-filter": "*",

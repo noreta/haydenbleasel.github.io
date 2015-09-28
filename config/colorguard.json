@@ -1,3 +1,9 @@
 {
-  "logOk": true
+  "logOk": true,
+  "whitelist": [
+    [
+      "#ffffff",
+      "#fcfcfc"
+    ]
+  ]
 }

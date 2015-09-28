@@ -1,4 +1,14 @@
 {
   "directory": "build/bower_components/",
-  "ignorePath": "build"
+  "ignorePath": "build",
+  "overrides": {
+    "font-awesome": {
+      "main": "css/font-awesome.css"
+    },
+    "bootstrap": {
+      "main": [
+        "js/affix.js"
+      ]
+    }
+  }
 }
