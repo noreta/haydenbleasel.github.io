@@ -1,5 +1,26 @@
-section#music
-    header
-        .container
-            h1 Beats from SoundCloud
-    .container#playlist
+extends ../layout
+
+block header
+    title Music - Hayden Bleasel
+
+block content
+    section#music
+        header
+            .container
+                h1 Beats from SoundCloud
+        #controls
+            .container
+                .row
+                    .column-1
+                        img#cover
+                    .column-3
+                        i.fa.fa-fast-backward#prev
+                        i.fa.fa-play#play
+                        i.fa.fa-pause.hidden#pause
+                        i.fa.fa-fast-forward#next
+                    .column-8
+                        progress#progress(value="0", max="100")
+        .container#playlist
+
+block footer
+    script(src="scripts/music.js")
