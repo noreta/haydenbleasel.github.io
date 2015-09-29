@@ -1,7 +1,7 @@
 doctype
 html(lang='en')
     head
-        title hydn.co / Hayden Bleasel
+        block header
         meta(charset='utf-8')
         meta(name='description', content='#{description}')
         meta(name='author', content='Hayden Bleasel')
@@ -45,12 +45,12 @@ html(lang='en')
             .container
                 img#logo
                 #links
-                    a(href="#home") Home
-                    a(href="#blog") Blog
-                    a(href="#design") Design
-                    a(href="#code") Code
-                    a(href="#photos") Photos
-                    a(href="#music") Music
+                    a(href="/") Home
+                    a(href="/blog.html") Blog
+                    a(href="/design.html") Design
+                    a(href="/code.html") Code
+                    a(href="/photos.html") Photos
+                    a(href="/music.html") Music
                 #social
                     a(href='https://twitter.com/haydenbleasel', target='_blank')
                         i.fa.fa-twitter
@@ -71,12 +71,7 @@ html(lang='en')
                     a(href='https://steamcommunity.com/id/haydenbleasel', target='_blank')
                         i.fa.fa-steam
         
-        include ./pages/home.jade
-        include ./pages/blog.jade
-        include ./pages/design.jade
-        include ./pages/code.jade
-        include ./pages/photos.jade
-        include ./pages/music.jade
+        block content
         
         footer.container
             p © 2015 — Hayden Bleasel. All rights reserved.
@@ -87,4 +82,5 @@ html(lang='en')
                 a(href="http://www.maryannemade.com/") Maryanne Nguyen
         <!-- bower:js -->
         <!-- endbower -->
-        script(src='scripts.js', inline)
+        script(src='scripts/main.js', inline)
+        block footer

@@ -2,6 +2,44 @@
     header {
         background-image: url('images/music.jpg');
     }
+    #controls {
+        background: @white;
+        margin: 0;
+        padding: 20px 0;
+        border-top: 1px solid transparent;
+        transition: border-color 0.4s;
+        z-index: 1;
+        #cover {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+        #progress {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            border: 0;
+            height: 10px;
+            display: block;
+            margin: 15px 0;
+            &::-webkit-progress-bar {
+                background: @faint;
+            }
+            &::-moz-progress-bar {
+                background: @faint;
+            }
+            &::-webkit-progress-value {
+                background: @dark;
+            }
+        }
+        .fa {
+            font-size: 21px;
+            color: @dark;
+            line-height: 40px;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+    }
     #playlist {
         a {
             &:extend(.clearfix all);
@@ -28,5 +66,12 @@
                 padding: 10px 30px;
             }
         }
+    }
+    &.affix #controls {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        border-color: @faint;
     }
 }

@@ -1,10 +1,11 @@
 nav {
-    background: @white;
+    background: transparent;
     &:extend(.clearfix all);
     padding: 20px 0;
     z-index: 1;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.4s;
+    transition: border-color 0.4s, background 0.4s;
+    position: relative;
     #logo {
         width: 40px;
         height: 40px;
@@ -40,6 +41,7 @@ body {
     &.affix {
         padding-top: 120px;
         nav {
+            background: @white;
             position: fixed;
             top: 0;
             left: 0;
@@ -54,6 +56,7 @@ header {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    margin-top: -121px;
 }
 
 section > div {
@@ -106,8 +109,12 @@ section > div {
 
 .generate-columns(12);
 
-.row div[class^="column-"] {
+.row [class^="column-"] {
     //margin-left: 10px;
     //margin-right: 10px;
     float: left;
+}
+
+.hidden {
+    display: none;
 }
