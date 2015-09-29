@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "basics": "~1.2.2",
-    "fullpage.js": "fullpage#~2.7.2",
     "respond": "~1.4.2",
     "jquery": "~2.1.4",
     "async": "~1.4.2",

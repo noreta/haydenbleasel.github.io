@@ -1,8 +1,10 @@
 $ ->
 
     # Create abc,def string
+    Number::numberWithCommas =
     String::numberWithCommas = ->
-        @replace /\B(?=(\d{3})+(?!\d))/g, ','
+        @toString().replace /\B(?=(\d{3})+(?!\d))/g, ','
+
 
     # Empty resize timer on page load
     resizeTimer = undefined
@@ -10,7 +12,7 @@ $ ->
     # Set the page resolution field
     resolution = ->
         pixels = $(window).width() * $(window).height()
-        $('#resolution').text pixels.toString().numberWithCommas()
+        $('#resolution').text pixels.numberWithCommas()
         return
 
     # Detect window resizes (throttle for performance)
