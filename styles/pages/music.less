@@ -1,3 +1,32 @@
 #music {
-
+    header {
+        background-image: url('images/music.jpg');
+    }
+    #playlist {
+        a {
+            &:extend(.clearfix all);
+            display: block;
+            font-family: @sans-serif;
+            font-size: 21px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: @dark;
+            text-decoration: none;
+            span {
+                display: inline-block;
+                &.index {
+                    width: 50px;
+                    margin-right: 30px;
+                }
+                &.plays {
+                    float: right;
+                }
+            }
+            &.playing {
+                background: @faint;
+                margin: -10px -30px 20px -30px;
+                padding: 10px 30px;
+            }
+        }
+    }
 }
