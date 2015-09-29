@@ -1,8 +1,5 @@
 $ ->
 
-    # Empty resize timer on page load
-    resizeTimer = undefined
-
     client_id = '946beb26280ea30b9938fdf88b34a869'
     sound = undefined
     play = $('#play')
@@ -33,7 +30,6 @@ $ ->
     $.getJSON 'http://api.soundcloud.com/playlists/116598264', {
         'client_id': client_id
     }, (playlist) ->
-        console.log playlist
         $.each playlist.tracks, (index, track) ->
             if (track.streamable)
                 $('#playlist').append [
@@ -68,13 +64,5 @@ $ ->
             $('#progress').attr 'value', val
     ), 100
 
-    $('#music').affix offset: top: ( $('header').outerHeight() - $(window).outerHeight() + $('#controls').outerHeight() )
-
-    checkPosition = ->
-        $('#music').affix('checkPosition')
-
-    # Detect window resizes (throttle for performance)
-    $(window).resize ->
-        console.log 'hello'
-        clearTimeout resizeTimer
-        resizeTimer = setTimeout(checkPosition, 250)
+    $('#music').affix offset: top: ->
+        $('header').outerHeight() - $(window).outerHeight() + $('#controls').outerHeight()
