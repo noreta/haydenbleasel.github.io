@@ -50,7 +50,10 @@ body {
 }
 
 header {
-    margin: 180px 0;
+    padding: 360px 0 120px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 section > div {
@@ -59,10 +62,7 @@ section > div {
 }
 
 .grey-wrapper {
-    background: #FCFCFC;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    background: @bare;
     padding: 90px 0;
 }
 
@@ -70,6 +70,11 @@ section > div {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
+    &.large {
+        max-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 .clearfix {
