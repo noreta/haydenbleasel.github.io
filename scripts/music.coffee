@@ -31,7 +31,7 @@ $ ->
         'client_id': client_id
     }, (playlist) ->
         $.each playlist.tracks, (index, track) ->
-            if (track.streamable)
+            if (track.streamable and track.original_format != 'raw')
                 $('#playlist').append [
                     '<a class="track" href="' + track.stream_url + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
                     '<span class="index">' + (index + 1) + '</span>'

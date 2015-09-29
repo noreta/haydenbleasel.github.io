@@ -5,18 +5,15 @@ $ ->
     String::numberWithCommas = ->
         @toString().replace /\B(?=(\d{3})+(?!\d))/g, ','
 
+    # Instantiate FastClick
+    FastClick.attach document.body
+
 # $ ->
 #
 #     # Variables
 #     photo = '5HMh_VukYd'
 #     instagram = '2047353728.75c688d.ac058af6b2cf44b6a0b491636a3a3eaa'
-#     github = 'f305462cd1557500084f9aa7c2c993d2c8e6b12f'
-#     repositories =
-#         labels: []
-#         data: []
 #
-#     # Instantiate FastClick
-#     FastClick.attach document.body
 #
 #     # Extend Chart configuration
 #     $.extend Chart.defaults.global,
@@ -28,25 +25,6 @@ $ ->
 #
 #     # Time for some async
 #     async.parallel [
-#
-#         # Pull repository stats from GitHub
-#         (callback) ->
-#             $.getJSON 'https://api.github.com/users/haydenbleasel/repos?access_token=' + github + '&callback=?', (repos) ->
-#
-#                 # Sort repositories by stars
-#                 repos.data.sort (a, b) ->
-#                     b.stargazers_count - (a.stargazers_count)
-#
-#                 # Save 6 most popular source repositories
-#                 async.each repos.data, ((repo, callback) ->
-#                     if !repo.fork and repositories.labels.length < 6
-#                         repositories.labels.push repo.name
-#                         repositories.data.push repo.stargazers_count
-#                     callback()
-#                 ), (error) ->
-#                     callback null
-#                 return
-#             return
 #
 #     # After all parallel tasks are complete...
 #     ], (err) ->
