@@ -1,9 +1,13 @@
 extends ../layout
+include ../mixins
 
 block header
     title Home - Hayden Bleasel
 
 block content
+    
+    +navbar('home')
+    
     section#home
         header.container
             h1 Welcome to my curated portfolio

@@ -1,9 +1,12 @@
 extends ../layout
+include ../mixins
 
 block header
     title Blog - Hayden Bleasel
 
 block content
+    +navbar('blog')
+    +header('Articles from Medium')
 
 block footer
     script(src="scripts/blog.js")

@@ -3,13 +3,14 @@
         background-image: url('images/design.jpg');
     }
     #grid {
-        column-count: 3;
-        column-width: 30px;
+        &:extend(.clearfix all);
         .shot {
+            width: calc(100% / 3);
+            float: left;
+            padding: 10px;
             display: block;
-            margin-bottom: 20px;
-            border: 1px solid @faint;
             img {
+                border: 1px solid @faint;
                 display: block;
             }
         }

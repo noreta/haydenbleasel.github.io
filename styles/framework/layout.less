@@ -1,6 +1,5 @@
 nav {
     background: transparent;
-    &:extend(.clearfix all);
     padding: 20px 0;
     z-index: 1;
     border-bottom: 1px solid transparent;
@@ -28,8 +27,14 @@ nav {
         font-size: 14px;
         text-decoration: none;
         line-height: 40px;
-        color: @light;
+        color: @white;
         display: inline-block;
+        &:hover {
+            color: @bare;
+        }
+    }
+    &.nav-home a {
+        color: @light;
         &:hover {
             color: @grey;
         }
@@ -47,6 +52,12 @@ body {
             left: 0;
             width: 100%;
             border-color: @faint;
+            a {
+                color: @light;
+                &:hover {
+                    color: @grey;
+                }
+            }
         }
     }
 }

@@ -10,10 +10,6 @@ $ ->
 
 # $ ->
 #
-#     # Variables
-#     photo = '5HMh_VukYd'
-#     instagram = '2047353728.75c688d.ac058af6b2cf44b6a0b491636a3a3eaa'
-#
 #
 #     # Extend Chart configuration
 #     $.extend Chart.defaults.global,

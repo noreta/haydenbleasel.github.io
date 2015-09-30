@@ -1,22 +1,22 @@
 extends ../layout
+include ../mixins
 
 block header
     title Photos - Hayden Bleasel
 
 block content
+    +navbar('photos')
     section#photos
-        header
-            .container
-                h1 Photos from Instagram
+        +header('Photos from Instagram')
         div.container
             h2 Okay, so here's the deal...
-            h3.column-8 So, I’ve decided to start a new adventure - trying to fill my Instagram Photo Map with beautiful scenes from all around the world. Every alley, bridge and river.
+            h3.column-8 So, I’ve decided to start a new adventure - trying to fill my Instagram Photo Map with beautiful scenes from all around the world.
             .columns
                 .column
                     p I’ve taken a liking to photography as you can tell by my Instagram feed, but the thing that enticed me most about Instagram was the Photo Map.
                 .column
                     p All the photos are taken by walking the streets, bridges and alleyways and finding locations that really call out to me. I hope you enjoy my journey.
-        #grid.container.large
+        #instagram.container.large
 
 block footer
     script(src="scripts/photos.js")

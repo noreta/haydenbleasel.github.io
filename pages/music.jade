@@ -1,13 +1,13 @@
 extends ../layout
+include ../mixins
 
 block header
     title Music - Hayden Bleasel
 
 block content
+    +navbar('music')
     section#music
-        header
-            .container
-                h1 Beats from SoundCloud
+        +header('Beats from SoundCloud')
         #controls
             .container
                 .row

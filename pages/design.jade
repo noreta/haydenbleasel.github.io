@@ -1,13 +1,13 @@
 extends ../layout
+include ../mixins
 
 block header
     title Design - Hayden Bleasel
 
 block content
+    +navbar('design')
     section#design
-        header
-            .container
-                h1 Shots from Dribbble
+        +header('Shots from Dribbble')
         div.container
             h2 Design Methodology
             h3.column-8 I design user interfaces and products that are simple, feasible and problem-solving before thinking about making it pretty. Here's some of my work:
