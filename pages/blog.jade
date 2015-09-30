@@ -6,7 +6,9 @@ block header
 
 block content
     +navbar('blog')
-    +header('Articles from Medium')
+    section#blog
+        +header('Articles from Medium')
+        div.container
 
 block footer
     script(src="scripts/blog.js")
