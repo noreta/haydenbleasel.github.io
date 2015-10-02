@@ -2,7 +2,7 @@ $ ->
 
     $.getJSON 'https://api.github.com/users/haydenbleasel/repos', {
         'access_token': 'f305462cd1557500084f9aa7c2c993d2c8e6b12f',
-        'callback': 'github'
+        'callback': '?'
     }, (repos) ->
 
         console.log repos

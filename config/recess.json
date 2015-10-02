@@ -1,5 +1,6 @@
 {
   "strictPropertyOrder": false,
   "noOverqualifying": false,
+  "noUnderscores": false,
   "noIDs": false
 }

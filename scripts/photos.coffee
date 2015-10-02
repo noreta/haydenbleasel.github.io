@@ -1,6 +1,8 @@
 $ ->
 
-    loadImages = (url) ->
+    library = []
+
+    loadImages = (url, callback) ->
         $.ajax
             url: url
             data: {
@@ -10,7 +12,7 @@ $ ->
             crossDomain: true
             dataType: 'jsonp'
             success: (photos, textStatus, errorThrown) ->
-                console.log photos
+                library = library.concat photos.data
                 $.each photos.data, (index, photo) ->
                     $('#instagram').append [
                         '<a class="photo" href="' + photo.link + '">'
@@ -18,8 +20,15 @@ $ ->
                         '</a>'
                     ].join('')
                 if (photos.pagination and photos.pagination.next_url)
-                    loadImages(photos.pagination.next_url)
+                    return loadImages(photos.pagination.next_url, callback)
+                else
+                    return callback()
             error: (jqXHR, textStatus, errorThrown) ->
                 console.log 'Failed!'
 
-    loadImages('https://api.instagram.com/v1/users/2047353728/media/recent/')
+    loadImages 'https://api.instagram.com/v1/users/2047353728/media/recent/', ->
+        photomap = new Photomap(
+            elementID: 'photomap'
+            instagram: library
+        )
+        return
