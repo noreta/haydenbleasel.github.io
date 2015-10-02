@@ -8,37 +8,17 @@ $ ->
     # Instantiate FastClick
     FastClick.attach document.body
 
-# $ ->
-#
-#
-#     # Extend Chart configuration
-#     $.extend Chart.defaults.global,
-#         tooltipFillColor: 'rgba(24, 24, 25, 0.8)'
-#         tooltipFontSize: 13
-#         tooltipYPadding: 10
-#         tooltipXPadding: 10
-#         tooltipTemplate: '<%=label%>: <%= value %> stars'
-#
-#     # Time for some async
-#     async.parallel [
-#
-#     # After all parallel tasks are complete...
-#     ], (err) ->
-#
-#         # Create repository chart
-#         chart = $('#canvas').get(0).getContext('2d')
-#         barChart = new Chart(chart).Bar({
-#             labels: repositories.labels
-#             datasets: [ {
-#                 label: 'Stargazers'
-#                 fillColor: '#D8D9DC'
-#                 strokeColor: '#D8D9DC'
-#                 highlightFill: '#B0B2B9'
-#                 highlightStroke: '#B0B2B9'
-#                 data: repositories.data
-#             } ]
-#         }, showScale: false)
-#
-#         return
-#
-#     return
+    # Empty resize timer on page load
+    resizeTimer = undefined
+
+    # Set the page resolution field
+    resolution = ->
+        pixels = $(document).width() * $(document).height()
+        $('#resolution').text pixels.numberWithCommas()
+
+    # Detect window resizes (throttle for performance)
+    $(window).resize ->
+        clearTimeout resizeTimer
+        resizeTimer = setTimeout(resolution, 250)
+
+    resolution()

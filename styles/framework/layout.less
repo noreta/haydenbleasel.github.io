@@ -5,14 +5,18 @@ nav {
     border-bottom: 1px solid transparent;
     transition: border-color 0.4s, background 0.4s;
     position: relative;
-    #logo {
-        width: 40px;
-        height: 40px;
+    p {
         float: left;
+        font-size: 17px;
+        margin: 0;
+        font-family: @sans-serif;
+        color: @grey;
+        font-weight: bold;
+        line-height: 40px;
     }
     #links {
         float: left;
-        margin-left: 30px;
+        margin-left: 40px;
         a {
             margin-right: 15px;
         }
@@ -27,14 +31,8 @@ nav {
         font-size: 14px;
         text-decoration: none;
         line-height: 40px;
-        color: @white;
-        display: inline-block;
-        &:hover {
-            color: @bare;
-        }
-    }
-    &.nav-home a {
         color: @light;
+        display: inline-block;
         &:hover {
             color: @grey;
         }
@@ -52,27 +50,52 @@ body {
             left: 0;
             width: 100%;
             border-color: @faint;
-            a {
-                color: @light;
-                &:hover {
-                    color: @grey;
-                }
-            }
         }
     }
 }
 
 header {
-    padding: 270px 0 90px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin-top: -121px;
+    padding: 180px 0;
+    margin-top: 0;
 }
 
 section > div {
     margin: 90px 0;
     position: relative;
+}
+
+input {
+    background: @white;
+    border: 1px solid @faint;
+    border-radius: 3px;
+    color: @dark;
+    font-family: @serif;
+    font-size: 14px;
+    padding: 12px 18px;
+    display: block;
+    line-height: 19px;
+    width: 100%;
+    ::-webkit-input-placeholder {
+        color: @light;
+    }
+    :-moz-placeholder {
+        color: @light;
+    }
+    ::-moz-placeholder {
+        color: @light;
+    }
+    :-ms-input-placeholder {
+        color: @light;
+    }
+}
+
+button, .button {
+    background: @bare;
+    border: 1px solid @faint;
+    border-radius: 3px;
+    font-weight: 500;
+    font-family: @sans-serif;
+    display: block;
 }
 
 .grey-wrapper {
@@ -120,7 +143,7 @@ section > div {
 
 .generate-columns(12);
 
-.row [class^="column-"] {
+.row [class*="column-"] {
     //margin-left: 10px;
     //margin-right: 10px;
     float: left;

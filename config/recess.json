@@ -1,4 +1,5 @@
 {
+  "noUniversalSelectors": false,
   "strictPropertyOrder": false,
   "noOverqualifying": false,
   "noUnderscores": false,

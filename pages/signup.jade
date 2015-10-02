@@ -5,17 +5,19 @@ block header
     title Signup - Hayden Bleasel
 
 block content
-    +navbar('signup')
-    #mc_embed_signup
-        form#mc-embedded-subscribe-form.validate(action='//haydenbleasel.us11.list-manage.com/subscribe/post?u=baa2d54a12a4ade9f607a474e&id=6f476ad712', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
-            #mc_embed_signup_scroll
-                #mce-responses.clear
-                    #mce-error-response.response(style='display:none')
-                    #mce-success-response.response(style='display:none')
-                div(style='position: absolute; left: -5000px;')
-                input(type='text', name='b_baa2d54a12a4ade9f607a474e_6f476ad712', placeholder='your email address' tabindex='-1', value='')
-                .clear
-                    input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
-
-block footer
-    script(src="scripts/blog.js")
+    +navbar('home')
+    header.container#signup
+        h1 Stay updated.
+        p Join my private mailing list for the latest about my life and work.
+        #mc_embed_signup
+            form#mc-embedded-subscribe-form.validate(action='//haydenbleasel.us11.list-manage.com/subscribe/post?u=baa2d54a12a4ade9f607a474e&id=6f476ad712', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')
+                #mc_embed_signup_scroll.column-6.row
+                    .mc-field-group.column-8
+                        input#mce-EMAIL.required.email(type='email', value='', placeholder='Your email address...' name='EMAIL')
+                    #mce-responses.clear
+                        #mce-error-response.response(style='display:none')
+                        #mce-success-response.response(style='display:none')
+                    div(style='position: absolute; left: -5000px;')
+                        input(type='text', name='b_baa2d54a12a4ade9f607a474e_6f476ad712', tabindex='-1', value='')
+                    .clear.column-4
+                        input#mc-embedded-subscribe.button(type='submit', value='Subscribe', name='subscribe')
