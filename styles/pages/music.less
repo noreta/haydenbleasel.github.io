@@ -2,14 +2,16 @@
     #controls {
         background: @white;
         margin: 0;
-        padding: 10px 0;
-        border-top: 1px solid transparent;
-        transition: border-color 0.4s;
-        z-index: 1;
+        padding: 5px 0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.4s, background 0.4s;
+        z-index: 2;
+        height: 51px;
         #cover {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             display: block;
+            margin: 5px 0;
         }
         #progress {
             -webkit-appearance: none;
@@ -30,7 +32,7 @@
             }
         }
         .fa {
-            font-size: 21px;
+            font-size: 18px;
             color: @dark;
             line-height: 40px;
             padding: 0 15px;
@@ -38,15 +40,14 @@
         }
     }
     #playlist {
-        a {
+        .track {
             &:extend(.clearfix all);
-            display: block;
+            cursor: pointer;
             font-family: @sans-serif;
             font-size: 21px;
             font-weight: 500;
             margin-bottom: 30px;
             color: @dark;
-            text-decoration: none;
             span {
                 display: inline-block;
                 &.index {
@@ -58,17 +59,23 @@
                 }
             }
             &.playing {
-                background: @faint;
+                background: @bare;
                 margin: -10px -30px 20px -30px;
                 padding: 10px 30px;
             }
         }
     }
-    &.affix #controls {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        left: 0;
-        border-color: @faint;
+    &.affix {
+        #playlist {
+            padding-top: 51px;
+        }
+        #controls {
+            background: @bare;
+            position: fixed;
+            top: 81px;
+            width: 100%;
+            left: 0;
+            border-color: @faint;
+        }
     }
 }

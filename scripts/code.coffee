@@ -1,26 +1,56 @@
 $ ->
 
-    $.getJSON 'https://api.github.com/users/haydenbleasel/repos', {
-        'access_token': 'f305462cd1557500084f9aa7c2c993d2c8e6b12f',
-        'callback': '?'
-    }, (repos) ->
+    $.ajax
+        url: 'https://api.github.com/users/haydenbleasel/repos'
+        data: {
+            access_token: 'f305462cd1557500084f9aa7c2c993d2c8e6b12f'
+        }
+        crossDomain: true
+        dataType: 'jsonp'
+        success: (repos) ->
 
-        console.log repos
+            # Sort repositories by stars
+            repos.data.sort (a, b) ->
+                b.stargazers_count - a.stargazers_count
 
-        # Sort repositories by stars
-        repos.data.sort (a, b) ->
-            b.stargazers_count - a.stargazers_count
+            $.each repos.data, (index, repo) ->
+                if (!repo.fork and repo.name != 'haydenbleasel.github.io')
+                    $('#repositories tbody').append [
+                        '<tr>'
+                        '<td> <a href="' + repo.html_url + '">' + repo.name + '</a> </td>'
+                        '<td>' + repo.stargazers_count + '</td>'
+                        '<td>' + repo.forks + '</td>'
+                        '</tr>'
+                    ].join('')
 
-        $.each repos, (index, repo) ->
-            if !repo.fork
-                $('#repositories').append [
+    $.ajax
+        url: 'https://api.github.com/users/haydenbleasel/events'
+        data: {
+            access_token: 'f305462cd1557500084f9aa7c2c993d2c8e6b12f'
+        }
+        crossDomain: true
+        dataType: 'jsonp'
+        success: (events) ->
+
+            console.log events
+
+    $.ajax
+        url: 'https://api.github.com/users/haydenbleasel/gists'
+        data: {
+            access_token: 'f305462cd1557500084f9aa7c2c993d2c8e6b12f'
+        }
+        crossDomain: true
+        dataType: 'jsonp'
+        success: (gists) ->
+
+            console.log gists
+
+            $.each gists.data, (index, gist) ->
+                $('#gists tbody').append [
                     '<tr>'
-                    '<td>' + repo.name + '</td>'
-                    '<td>' + repo.stargazers_count + '</td>'
+                    '<td> <a href="' + gist.html_url + '">' + Object.keys(gist.files)[0] + '</a> </td>'
                     '</tr>'
                 ].join('')
-        return
-    return
 
 
 

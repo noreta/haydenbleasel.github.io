@@ -1,68 +1,85 @@
+# remove howler.js, use Soundcloud JS SDK (streaming fixes + built-in audio system)
+
 $ ->
 
-    client_id = '946beb26280ea30b9938fdf88b34a869'
+    # Initial sound is empty
     sound = undefined
-    play = $('#play')
-    pause = $('#pause')
-    next = $('#next')
-    prev = $('#prev')
 
-    howl = (track) ->
+    # Pause the current song
+    pause = ->
         if (sound)
-            sound.stop()
-        track.addClass('playing').siblings().removeClass 'playing'
-        $('#cover').attr 'src', track.data('cover')
-        sound = new Howl(
-            buffer: true
-            format: track.data 'format'
-            urls: [ track.attr('href') + '?client_id=' + client_id ]
-            onpause: ->
-                pause.hide(0)
-                play.show(0)
-            onplay: ->
-                pause.show(0)
-                play.hide(0)
-            onend: ->
-                track = $('.track.playing').next('.track')
-                howl(track)
-        ).play()
+            sound.pause()
+        $('#pause').hide 0
+        $('#play').show 0
 
-    $.getJSON 'http://api.soundcloud.com/playlists/116598264', {
-        'client_id': client_id
-    }, (playlist) ->
+    # Play the song ID
+    play = (id) ->
+        $('#play').hide 0
+        $('#pause').show 0
+        if (id)
+            if (sound)
+                sound.stop()
+            self = $('.track[data-id="' + id + '"]')
+            $('.track').removeClass 'playing'
+            self.addClass 'playing'
+            $('#cover').attr 'src', self.data('cover')
+            SC.stream '/tracks/' + id, (track) ->
+                sound = track
+                sound.play()
+        else if (sound)
+            sound.play()
+        else
+            play $('#playlist .track').first().data 'id'
+
+    # Initialise the SoundCloud SDK
+    SC.initialize(
+        client_id: '946beb26280ea30b9938fdf88b34a869'
+        redirect_uri: '?'
+    )
+
+    # Get my selected playlist
+    SC.get '/playlists/116598264', (playlist) ->
+
+        # Display the playlist
         $.each playlist.tracks, (index, track) ->
-            if (track.streamable and track.original_format != 'raw')
+            if (track.streamable)
                 $('#playlist').append [
-                    '<a class="track" href="' + track.stream_url + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
+                    '<div class="track" data-id="' + track.id + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
                     '<span class="index">' + (index + 1) + '</span>'
                     '<span class="title">' + track.title + '</span>'
                     '<span class="plays">' + track.playback_count.numberWithCommas() + '</span>'
-                    '</a>'
+                    '</div>'
                 ].join('')
 
-    $('#playlist').on 'click', '.track', (e) ->
-        e.preventDefault()
-        howl($(this))
+        # Play button handler
+        $('#play').click ->
+            play()
 
-    play.click ->
-        sound.play()
+        # Pause button handler
+        $('#pause').click ->
+            pause()
 
-    pause.click ->
-        sound.pause()
+        # Previous button handler
+        $('#prev').click ->
+            play $('.playing').prev('.track').data('id')
 
-    prev.click ->
-        track = $('.track.playing').prev('.track')
-        howl(track)
+        # Next button handler
+        $('#next').click ->
+            play $('.playing').next('.track').data('id')
 
-    next.click ->
-        track = $('.track.playing').next('.track')
-        howl(track)
+    # Play the song that's clicked
+    $('#playlist').on 'click', '.track', ->
+        play $(this).data 'id'
 
+    # Update the progress bar
     setInterval (->
         if (sound)
-            val = (sound.pos() / sound._duration * 100)
-            $('#progress').attr 'value', val
-    ), 100
+            $('#progress').attr 'value', (sound._player._currentPosition / sound._player._duration * 100)
+            console.log(sound._player._currentPosition, sound._player._duration)
+            if (sound._player._currentPosition == sound._player._duration)
+                play $('.playing').next('.track').data('id')
 
-    $('#music').affix offset: top: ->
-        $('header').outerHeight() - $(window).outerHeight() + $('#controls').outerHeight()
+    ), 200
+
+    # Affix the controls bar
+    $('#music').affix offset: top: $('#controls').offset().top - 81
