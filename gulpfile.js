@@ -98,9 +98,10 @@
 
     gulp.task('dist:bundle', function () {
         var assets = $.useref.assets();
-        gulp.src('build/index.html')
+        gulp.src('build/**/*.html')
             .pipe($.robots(config.robots))
             .pipe($.humans(config.humans))
+            .pipe($.replace('.html', ''))
             //.pipe($.injectString.before('</head>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />'))
             .pipe($.injectString.before('</head>', '<link rel="favicons" href="logo.png">'))
             .pipe($.if(online, $.favicons(config.favicons)))

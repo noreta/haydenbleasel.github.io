@@ -2,6 +2,9 @@
     #photo {
         text-align: right;
         margin-top: -300px;
+        @media (max-width: 768px) {
+
+        }
     }
     #published {
         font-family: @serif;
@@ -13,8 +16,26 @@
         text-align: center;
         margin-top: 90px;
         @media (max-width: 1200px) {
-            margin-top: 81px;
+            margin-top: 80px;
             font-size: 18px;
+        }
+        @media (max-width: 980px) {
+            margin-top: 70px;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            margin-top: 60px;
+            font-size: 14px;
+            span {
+                display: block;
+                &.optional {
+                    display: none;
+                }
+            }
+        }
+        @media (max-width: 480px) {
+            margin-top: 40px;
+            font-size: 12px;
         }
     }
     #email {
@@ -27,6 +48,18 @@
         @media (max-width: 1200px) {
             margin-top: 36px;
             font-size: 47px;
+        }
+        @media (max-width: 980px) {
+            margin-top: 31px;
+            font-size: 38px;
+        }
+        @media (max-width: 768px) {
+            margin-top: 26px;
+            font-size: 29px;
+        }
+        @media (max-width: 480px) {
+            margin-top: 20px;
+            font-size: 20px;
         }
     }
 }
