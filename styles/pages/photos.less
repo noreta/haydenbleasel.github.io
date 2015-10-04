@@ -9,10 +9,51 @@
             width: 25%;
             float: left;
             padding: 10px;
+            position: relative;
+            &:hover .overlay {
+                opacity: 1;
+            }
             img {
                 display: block;
                 width: 100%;
                 max-width: none;
+            }
+            .overlay {
+                position: absolute;
+                opacity: 0;
+                transition: opacity 0.4s;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                background: fade(@black, 40%);
+                bottom: 10px;
+                padding: 30px;
+                p {
+                    font-family: @sans-serif;
+                    color: @white;
+                    line-height: 1.5;
+                    &.location {
+                        margin: 0;
+                        font-size: 12px;
+                    }
+                    &.caption {
+                        margin: 20px 0;
+                        font-size: 17px;
+                    }
+                }
+                .meta {
+                    position: absolute;
+                    left: 30px;
+                    display: block;
+                    right: 30px;
+                    bottom: 30px;
+                    p {
+                        font-size: 12px;
+                        i {
+                            margin-right: 8px;
+                        }
+                    }
+                }
             }
         }
     }

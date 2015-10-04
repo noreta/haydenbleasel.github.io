@@ -1,20 +1,20 @@
 extends ../layout
-include ../mixins
 
 block header
     title Photos - Hayden Bleasel
 
 block content
-    +navbar('photos')
     section#photos
-        +header('Worth a few thousand words')
+        header.container
+            h1.wow.fadeInUp Worth a few thousand words
         div.container
-            h2 Okay, so here's the deal...
-            h3.column-8 So, I’ve decided to start a new adventure - trying to fill my Instagram Photo Map with beautiful scenes from all around the world.
-            .columns
-                .column
+            .row
+                h2.col-sm-8 Okay, so here's the deal...
+                h3.col-sm-8 I’ve decided to start a new adventure — trying to fill my Instagram Photo Map with beautiful snippets of places from all around the world.
+            .row
+                .col-sm-5
                     p I’ve taken a liking to photography as you can tell by my Instagram feed, but the thing that enticed me most about Instagram was the Photo Map.
-                .column
+                .col-sm-5.col-sm-offset-1
                     p All the photos are taken by walking the streets, bridges and alleyways and finding locations that really call out to me. I hope you enjoy my journey.
         #photomap
         p.container And now for the full Instagram feed:

@@ -15,8 +15,16 @@ $ ->
                 library = library.concat photos.data
                 $.each photos.data, (index, photo) ->
                     $('#instagram').append [
-                        '<a class="photo" href="' + photo.link + '">'
+                        '<a class="photo wow fadeIn" href="' + photo.link + '" data-wow-delay="' + (index % 4 / 5) + 's">'
                         '<img src="' + photo.images.standard_resolution.url + '" alt="' + photo.caption.text + '" width="640" height="640" />'
+                        '<div class="overlay">'
+                        '<p class="location">' + photo.location.name + ' (' + photo.location.latitude.direction() + ' × ' + photo.location.longitude.direction('long') + ')</p>'
+                        '<p class="caption">' + jEmoji.unifiedToHTML(photo.caption.text) + '</p>'
+                        '<div class="clearfix meta">'
+                        '<p class="pull-left likes"> <i class="fa fa-heart"></i>' + photo.likes.count + '</p>'
+                        '<p class="pull-right date">' + moment.unix(photo.caption.created_time).fromNow() + '</p>'
+                        '</div>'
+                        '</div>'
                         '</a>'
                     ].join('')
                 if (photos.pagination and photos.pagination.next_url)

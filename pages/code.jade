@@ -1,24 +1,24 @@
 extends ../layout
-include ../mixins
 
 block header
     title Code - Hayden Bleasel
 
 block content
-    +navbar('code')
     section#code
-        +header('Open source developer tools')
+        header.container
+            h1.wow.fadeInUp Open source developer tools
         div.container
-            h2 I'm also a full-stack developer
-            h3.column-8 In addition to working as a Product Designer, I’m also relatively fluent with full-stack development. I tend to build my own products from ground up.
-            .columns
-                .column
+            .row
+                h2.col-sm-8 I'm also a full-stack developer
+                h3.col-sm-8 In addition to working as a Product Designer, I’m also relatively fluent with full-stack development. I tend to build my own products from ground up.
+            .row
+                .col-sm-5
                     p More importantly, I’ve spent a few years writing open-source libraries and plugins on GitHub. Most of them are for front-end development automation.
-                .column
+                .col-sm-5.col-sm-offset-1
                     p I like the idea of writing as little code as possible to get the same job done, so I built and maintain Catalyst. Check out my projects below for more details.
         .container
             .row
-                .column-8
+                .col-sm-8
                     table#repositories
                         thead
                             tr
@@ -26,7 +26,7 @@ block content
                                 th Stars
                                 th Forks
                         tbody
-                .column-4
+                .col-sm-4
                     table#activity
                         thead
                             tr

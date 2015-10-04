@@ -1,50 +1,48 @@
 extends ../layout
-include ../mixins
 
 block header
     title Home - Hayden Bleasel
 
-block content
-    
-    +navbar('home')
-    
+block content    
     section#home
         header.container
-            h1 Welcome to my curated portfolio
-            #published
+            h1.wow.fadeInUp Welcome to my curated portfolio
+            #published.wow.fadeIn(data-wow-delay='0.2s')
                 span Sydney × San Francisco
                 span.optional  — 
                 span September 2015
         .container#overview
             h2.step(data-index="01") Overview
-            h3.column-7 I’m a Product Designer and Full-Stack Developer living in <strike>Sydney</strike> Palo Alto.
-            p.column-7 I’m also studying a Bachelor of Science in Information Technology / Bachelor of Business at the University of Technology, Sydney. Need something done? 
-                a(href="#contact") Get in touch.
+            .row
+                h3.col-sm-7 I’m a Product Designer and Full-Stack Developer living in <strike>Sydney</strike> Palo Alto.
+                p.col-sm-7 I’m also studying a Bachelor of Science in Information Technology / Bachelor of Business at the University of Technology, Sydney. Need something done? 
+                    a(href="#contact") Get in touch.
         .grey-wrapper.container.large
             .container#work
                 .row
-                    .column-8
+                    .col-sm-8
                         h2.step(data-index="02") Projects and work
-                    .column-4#photo
+                    .col-sm-4.wow.fadeInUp#photo(data-wow-delay='0.2s')
                         img(src="images/photo.jpg")
-                .columns
-                    .column
+                .row
+                    .col-sm-5
                         p I’m currently a Product Design intern at 
                             a(href="https://www.palantir.com/", target="_blank") Palantir
                             |  in Palo Alto. I think it’s going to be fun, check back for more later.
                         p I spent around a year as Head of Product at 
                             a(href="https://sumry.me/", target="_blank") Sumry
                             |. I rebuilt the platform from ground up on Node.js & Angular.js and designed the new Sumry identity, user experience and interface.
-                    .column
+                    .col-sm-5.col-sm-offset-1
                         p I also co-created a web design and development studio, 
                             a(href="http://gunmetal.com.au/", target="_blank") Gunmetal
                             |. We worked for an array of clients, ranging from enthusiastic startups to large companies like National Geographic.
                         p I’m working on a secret project at the moment. More to come soon...
         
         .container#contact
-            h2.column-7.step(data-index="03") Get in touch
-            p.column-6 I like working on side projects and meeting new people, so let me know if you want to talk!
-            a#email(href="mailto:haydenbleasel@gmail.com") haydenbleasel@gmail.com
+            .row
+                h2.col-sm-7.step(data-index="03") Get in touch
+                p.col-sm-6 I like working on side projects and meeting new people, so let me know if you want to talk!
+            a.wow.fadeInUp#email(href="mailto:haydenbleasel@gmail.com", data-wow-delay='0.2s') haydenbleasel@gmail.com
 
 block footer
     script(src="scripts/home.js")

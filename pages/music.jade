@@ -1,24 +1,23 @@
 extends ../layout
-include ../mixins
 
 block header
     title Music - Hayden Bleasel
 
 block content
-    +navbar('music')
     section#music
-        +header('Mixtapes for most occasions')
+        header.container
+            h1.wow.fadeInUp Mixtapes for most occasions
         #controls
             .container
                 .row
-                    .column-1
+                    .col-sm-1
                         img#cover
-                    .column-3
+                    .col-sm-3
                         i.fa.fa-fast-backward#prev
                         i.fa.fa-play#play
                         i.fa.fa-pause.hidden#pause
                         i.fa.fa-fast-forward#next
-                    .column-8
+                    .col-sm-8
                         progress#progress(value="0", max="100")
         .container#playlist
 

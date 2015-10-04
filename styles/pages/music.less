@@ -40,13 +40,14 @@
         }
     }
     #playlist {
+        overflow-x: hidden;
         .track {
             &:extend(.clearfix all);
             cursor: pointer;
             font-family: @sans-serif;
-            font-size: 21px;
+            font-size: 18px;
             font-weight: 500;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             color: @dark;
             span {
                 display: inline-block;
@@ -60,7 +61,7 @@
             }
             &.playing {
                 background: @bare;
-                margin: -10px -30px 20px -30px;
+                margin: -10px -30px 18px -30px;
                 padding: 10px 30px;
             }
         }

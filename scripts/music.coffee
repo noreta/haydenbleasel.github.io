@@ -16,6 +16,7 @@ $ ->
     play = (id) ->
         $('#play').hide 0
         $('#pause').show 0
+
         if (id)
             if (sound)
                 sound.stop()
@@ -46,7 +47,7 @@ $ ->
                 $('#playlist').append [
                     '<div class="track" data-id="' + track.id + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
                     '<span class="index">' + (index + 1) + '</span>'
-                    '<span class="title">' + track.title + '</span>'
+                    '<span class="title">' + track.user.username + ' - ' + track.title + '</span>'
                     '<span class="plays">' + track.playback_count.numberWithCommas() + '</span>'
                     '</div>'
                 ].join('')
@@ -73,9 +74,8 @@ $ ->
 
     # Update the progress bar
     setInterval (->
-        if (sound)
+        if (sound && sound._player && sound._player._currentPosition && sound._player._duration)
             $('#progress').attr 'value', (sound._player._currentPosition / sound._player._duration * 100)
-            console.log(sound._player._currentPosition, sound._player._duration)
             if (sound._player._currentPosition == sound._player._duration)
                 play $('.playing').next('.track').data('id')
 

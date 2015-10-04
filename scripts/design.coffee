@@ -5,7 +5,7 @@ $ ->
     }, (shots) ->
         $.each shots, (index, shot) ->
             $('#grid').append [
-                '<a class="shot" href="' + shot.html_url + '">'
+                '<a class="shot wow fadeIn" href="' + shot.html_url + '" data-wow-delay="' + (index % 3 / 5) + 's">'
                 '<img src="' + shot.images.hidpi + '" alt="' + shot.title + '" width="800" height="600" />'
                 '</a>'
             ].join('')

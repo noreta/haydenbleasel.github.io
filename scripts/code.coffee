@@ -33,8 +33,6 @@ $ ->
 
             $.each events.data, (index, event) ->
 
-                console.log event
-
                 message = [event.actor.login]
 
                 switch event.type
@@ -89,17 +87,13 @@ $ ->
                     else
                         break
 
-
                 if event.repo
                     message.push event.repo.name
                 else if event.team
                     message.push event.team.name
 
-
                 message.push event.repo.name
-                message.push event.created_at.timeAgo()
-
-                console.log message
+                message.push moment(event.created_at, moment.ISO_8601).fromNow()
 
                 $('#activity tbody').append [
                     '<tr>'

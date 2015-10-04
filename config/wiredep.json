@@ -9,6 +9,12 @@
       "main": [
         "js/affix.js"
       ]
+    },
+    "emoji": {
+      "main": [
+        "lib/emoji.css",
+        "lib/emoji.js"
+      ]
     }
   }
 }

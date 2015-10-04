@@ -24,6 +24,10 @@
     "normalize-css": "normalize.css#~3.0.3",
     "font-awesome": "~4.4.0",
     "bootstrap": "~3.3.5",
-    "photomap": "*"
+    "photomap": "*",
+    "moment": "momentjs#~2.10.6",
+    "emoji": "~0.3.2",
+    "wow": "wowjs#~1.1.2",
+    "animate.css": "~3.4.0"
   }
 }

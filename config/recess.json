@@ -3,5 +3,6 @@
   "strictPropertyOrder": false,
   "noOverqualifying": false,
   "noUnderscores": false,
+  "zeroUnits": false,
   "noIDs": false
 }
