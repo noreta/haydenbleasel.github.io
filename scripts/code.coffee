@@ -14,7 +14,7 @@ $ ->
             $.each repos.data, (index, repo) ->
                 if (!repo.fork and repo.name != 'haydenbleasel.github.io')
                     $('#repositories tbody').append [
-                        '<tr>'
+                        '<tr class="wow fadeIn" data-wow-delay="' + index / 20 + 's">'
                         '<td> <a href="' + repo.html_url + '">' + repo.name + '</a> </td>'
                         '<td>' + repo.stargazers_count + '</td>'
                         '<td>' + repo.forks + '</td>'
@@ -31,73 +31,59 @@ $ ->
         dataType: 'jsonp'
         success: (events) ->
 
+            messages = []
+
             $.each events.data, (index, event) ->
 
-                message = [event.actor.login]
+                message = (
+                    content: [event.actor.login]
+                    date: moment(event.created_at, moment.ISO_8601).fromNow()
+                )
 
                 switch event.type
                     when 'CommitCommentEvent'
-                        message.push 'commented on a commit for'
-                        message.push event.repo.name
+                        message.content.push 'commented on a commit for'
                     when 'CreateEvent'
-                        message.push 'created'
-                        message.push event.repo.name
+                        message.content.push 'created'
                     when 'DeleteEvent'
-                        message.push 'deleted the'
-                        message.push event.ref_type
-                        message.push event.ref
-                        message.push 'on'
-                        message.push event.repository.name
-                    when 'DeploymentEvent'
-                        message.push 'deployed'
-                    when 'DeploymentStatusEvent'
-                        message.push ''
+                        message.content.push 'deleted the'
+                        message.content.push event.ref_type
+                        message.content.push '"' + event.ref '"'
+                        message.content.push 'on'
                     when 'ForkEvent'
-                        message.push 'forked'
+                        message.content.push 'forked'
                     when 'GollumEvent'
-                        message.push 'updated the wiki for'
+                        message.content.push 'updated the wiki for'
                     when 'IssueCommentEvent'
-                        message.push 'commented on an issue for'
+                        message.content.push 'commented on an issue for'
                     when 'IssuesEvent'
-                        message.push 'updated an issue for'
+                        message.content.push 'updated an issue for'
                     when 'MemberEvent'
-                        message.push 'was added as a collaborator to'
-                    when 'MembershipEvent'
-                        message.push 'was added as a member to'
-                    when 'PageBuildEvent'
-                        message.push ''
+                        message.content.push 'was added as a collaborator to'
                     when 'PublicEvent'
-                        message.push ''
+                        message.content.push 'open sourced'
                     when 'PullRequestEvent'
-                        message.push ''
+                        message.content.push 'updated a pull request for'
                     when 'PullRequestReviewCommentEvent'
-                        message.push ''
+                        message.content.push 'commented on a pull request for'
                     when 'PushEvent'
-                        message.push 'pushed changes to'
+                        message.content.push 'pushed changes to'
                     when 'ReleaseEvent'
-                        message.push ''
-                    when 'RepositoryEvent'
-                        message.push ''
-                    when 'StatusEvent'
-                        message.push ''
-                    when 'TeamAddEvent'
-                        message.push ''
+                        message.content.push 'released a new version of'
                     when 'WatchEvent'
-                        message.push 'starred'
+                        message.content.push 'starred'
                     else
                         break
 
-                if event.repo
-                    message.push event.repo.name
-                else if event.team
-                    message.push event.team.name
+                message.content.push event.repo.name.split('/')[1]
 
-                message.push event.repo.name
-                message.push moment(event.created_at, moment.ISO_8601).fromNow()
+                if (!messages.length || message.content.join(' ') != messages[messages.length - 1].content.join(' '))
+                    messages.push message
 
+            $.each messages, (index, message) ->
                 $('#activity tbody').append [
-                    '<tr>'
-                    '<td> <a href="' + event.repo.url + '">' + message.join(' ') + '</a> </td>'
+                    '<tr class="wow fadeIn" data-wow-delay="' + index / 20 + 's">'
+                    '<td>' + message.content.join(' ') + ' ' + message.date + '</a> </td>'
                     '</tr>'
                 ].join('')
 
@@ -114,7 +100,7 @@ $ ->
 
             $.each gists.data, (index, gist) ->
                 $('#gists tbody').append [
-                    '<tr>'
-                    '<td> <a href="' + gist.html_url + '">' + Object.keys(gist.files)[0] + '</a> </td>'
+                    '<tr class="wow fadeIn" data-wow-delay="' + index / 20 + 's">'
+                    '<td> <a href="' + gist.html_url + '">' + Object.keys(gist.files)[0] + '</a> — ' + gist.description + '</td>'
                     '</tr>'
                 ].join('')

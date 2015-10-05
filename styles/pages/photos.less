@@ -1,6 +1,10 @@
 #photos {
     #photomap {
         height: 600px;
+        margin-bottom: 90px;
+        @media (max-width: 767px) {
+            height: 400px;
+        }
     }
     #instagram {
         &:extend(.clearfix all);

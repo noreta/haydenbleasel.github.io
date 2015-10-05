@@ -20,6 +20,7 @@ $ ->
         if (id)
             if (sound)
                 sound.stop()
+            $('#progress').attr 'value', 0
             self = $('.track[data-id="' + id + '"]')
             $('.track').removeClass 'playing'
             self.addClass 'playing'
@@ -45,7 +46,7 @@ $ ->
         $.each playlist.tracks, (index, track) ->
             if (track.streamable)
                 $('#playlist').append [
-                    '<div class="track" data-id="' + track.id + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
+                    '<div class="track wow fadeIn" data-wow-delay="' + index / 20 + 's" data-id="' + track.id + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
                     '<span class="index">' + (index + 1) + '</span>'
                     '<span class="title">' + track.user.username + ' - ' + track.title + '</span>'
                     '<span class="plays">' + track.playback_count.numberWithCommas() + '</span>'
