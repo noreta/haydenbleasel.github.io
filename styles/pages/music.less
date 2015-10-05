@@ -8,35 +8,61 @@
         z-index: 2;
         height: 51px;
         #cover {
-            width: 30px;
-            height: 30px;
-            display: block;
-            margin: 5px 0;
+            @media (max-width: 480px) {
+                width: 18%;
+                padding-right: 5px;
+            }
+            img {
+                width: 30px;
+                height: 30px;
+                display: block;
+                margin: 5px 0;
+            }
         }
         #progress {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            border: 0;
-            height: 10px;
-            display: block;
-            margin: 15px 0;
-            &::-webkit-progress-bar {
-                background: @faint;
+            @media (max-width: 480px) {
+                width: 42%;
+                padding-left: 5px;
+                padding-right: 5px;
             }
-            &::-moz-progress-bar {
-                background: @faint;
-            }
-            &::-webkit-progress-value {
-                background: @dark;
+            #progressbar {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 100%;
+                border: 0;
+                height: 10px;
+                display: block;
+                margin: 15px 0;
+                &::-webkit-progress-bar {
+                    background: @faint;
+                }
+                &::-moz-progress-bar {
+                    background: @faint;
+                }
+                &::-webkit-progress-value {
+                    background: @dark;
+                }
             }
         }
-        .fa {
-            font-size: 18px;
-            color: @dark;
-            line-height: 40px;
-            padding: 0 15px;
-            cursor: pointer;
+        #buttons {
+            @media (max-width: 480px) {
+                width: 40%;
+                padding-left: 5px;
+            }
+            .fa {
+                font-size: 18px;
+                color: @dark;
+                line-height: 40px;
+                padding: 0 15px;
+                cursor: pointer;
+                @media (max-width: 767px) {
+                    padding: 0 10px;
+                }
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                    padding: 0 10px;
+                }
+            }
         }
     }
     #playlist {
@@ -50,14 +76,38 @@
             font-weight: 500;
             margin-bottom: 28px;
             color: @dark;
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
             span {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
                 display: inline-block;
                 &.index {
                     width: 50px;
                     margin-right: 30px;
+                    @media (max-width: 767px) {
+                        width: 20px;
+                    }
+                }
+                &.title {
+                    max-width: 700px;
+                    @media (max-width: 991px) {
+                        max-width: 500px;
+                    }
+                    @media (max-width: 767px) {
+                        max-width: 260px;
+                    }
+                    @media (max-width: 480px) {
+                        max-width: 200px;
+                    }
                 }
                 &.plays {
                     float: right;
+                    @media (max-width: 480px) {
+                        display: none;
+                    }
                 }
             }
             &.playing {
@@ -78,6 +128,12 @@
             width: 100%;
             left: 0;
             border-color: @faint;
+            @media (max-width: 767px) {
+                top: 71px;
+            }
+            @media (max-width: 480px) {
+                top: 61px;
+            }
         }
     }
 }

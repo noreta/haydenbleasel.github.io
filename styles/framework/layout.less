@@ -8,6 +8,7 @@ nav {
     height: 81px;
     @media (max-width: 767px) {
         height: auto;
+        padding: 0;
     }
     #home {
         float: left;
@@ -19,38 +20,62 @@ nav {
         display: block;
         line-height: 40px;
         @media (max-width: 767px) {
-            float: none;
-            text-align: center;
+            padding: 15px;
+        }
+        @media (max-width: 480px) {
+            line-height: 30px;
         }
     }
-    #links {
-        float: left;
-        margin-left: 30px;
-        @media (max-width: 767px) {
-            float: none;
-            text-align: center;
-            margin-left: 0;
-        }
-        a {
-            margin-right: 15px;
-            @media (max-width: 767px) {
-                margin-left: 7px;
-                margin-right: 7px;
-            }
-        }
-    }
-    #social {
+    #menu {
+        line-height: 40px;
+        padding: 15px;
         float: right;
+        cursor: pointer;
+        display: none;
         @media (max-width: 767px) {
-            float: none;
-            text-align: center;
+            display: block;
         }
-        a {
-            margin-left: 15px;
+        @media (max-width: 480px) {
+            line-height: 30px;
+        }
+    }
+    #sidebar {
+        position: static;
+        #links {
+            float: left;
+            margin-left: 30px;
             @media (max-width: 767px) {
-                margin-left: 7px;
-                margin-right: 7px;
+                float: none;
+                margin-left: 0;
             }
+            a {
+                margin-right: 15px;
+            }
+        }
+        #social {
+            float: right;
+            @media (max-width: 767px) {
+                float: none;
+                padding-top: 10px;
+                border-top: 1px solid @faint;
+                margin-top: 10px;
+            }
+            a {
+                margin-left: 15px;
+            }
+        }
+        @media (max-width: 767px) {
+            background: #fff;
+            z-index: 99;
+            padding: 20px 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: fixed;
+            right: -200px;
+            top: 0;
+            border-left: 1px solid @faint;
+            height: 100%;
+            width: 200px;
         }
     }
     a {
@@ -62,15 +87,36 @@ nav {
         &:hover {
             color: @grey;
         }
+        @media (max-width: 767px) {
+            display: block;
+            margin: 0 !important;
+            padding: 15px 30px;
+            line-height: normal;
+            &:after {
+                content: attr(alt);
+                margin-left: 10px;
+            }
+            .fa {
+                width: 20px;
+            }
+        }
     }
 }
 
 body {
     padding-top: 40px;
+    padding-bottom: 40px;
+    transition: transform 0.4s;
+    &.active {
+        transform: translateX(-200px);
+    }
     &.affix {
         padding-top: 121px;
         @media (max-width: 767px) {
-            padding-top: 40px;
+            padding-top: 111px;
+        }
+        @media (max-width: 480px) {
+            padding-top: 91px;
         }
         nav {
             background: @white;
@@ -79,10 +125,6 @@ body {
             left: 0;
             width: 100%;
             border-color: @faint;
-            @media (max-width: 767px) {
-                position: static;
-                border-color: transparent;
-            }
         }
     }
 }
@@ -96,6 +138,9 @@ header {
     @media (max-width: 767px) {
         padding: 120px 0;
     }
+    @media (max-width: 480px) {
+        padding: 60px 0;
+    }
 }
 
 section > div {
@@ -103,6 +148,9 @@ section > div {
     position: relative;
     @media (max-width: 767px) {
         padding: 60px 0;
+    }
+    @media (max-width: 767px) {
+        padding: 30px 0;
     }
 }
 
@@ -142,7 +190,6 @@ button, .button {
 
 table {
     width: 100%;
-    margin-right: 30px;
     border: 1px solid @faint;
     text-align: left;
     margin-bottom: 40px;
@@ -151,6 +198,11 @@ table {
     }
     th, td {
         padding: 15px 30px;
+        line-height: 1.3;
+        @media (max-width: 480px) {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
     }
     td {
         color: @grey;
@@ -164,7 +216,7 @@ table {
 footer {
     padding-top: 120px;
     padding-bottom: 120px;
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
         padding-top: 60px;
     }
     @media (max-width: 480px) {
@@ -190,6 +242,9 @@ footer {
     @media (max-width: 767px) {
         padding: 60px 0;
     }
+    @media (max-width: 767px) {
+        padding: 30px 0;
+    }
 }
 
 .container {
@@ -199,17 +254,19 @@ footer {
         padding-left: 5%;
         padding-right: 5%;
     }
+    @media (max-width: 480px) {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
     &.large {
-        max-width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-        width: 100%;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
         padding-left: 0;
         padding-right: 0;
         @media (max-width: 1199px) {
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
+            width: 100%;
         }
     }
 }

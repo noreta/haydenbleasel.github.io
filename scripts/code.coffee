@@ -15,9 +15,9 @@ $ ->
                 if (!repo.fork and repo.name != 'haydenbleasel.github.io')
                     $('#repositories tbody').append [
                         '<tr class="wow fadeIn" data-wow-delay="' + index / 20 + 's">'
-                        '<td> <a href="' + repo.html_url + '">' + repo.name + '</a> </td>'
-                        '<td>' + repo.stargazers_count + '</td>'
-                        '<td>' + repo.forks + '</td>'
+                            '<td> <a href="' + repo.html_url + '">' + repo.name + '</a> </td>'
+                            '<td>' + repo.stargazers_count + '</td>'
+                            '<td>' + repo.forks + '</td>'
                         '</tr>'
                     ].join('')
 
@@ -83,7 +83,7 @@ $ ->
             $.each messages, (index, message) ->
                 $('#activity tbody').append [
                     '<tr class="wow fadeIn" data-wow-delay="' + index / 20 + 's">'
-                    '<td>' + message.content.join(' ') + ' ' + message.date + '</a> </td>'
+                        '<td>' + message.content.join(' ') + ' ' + message.date + '</a> </td>'
                     '</tr>'
                 ].join('')
 
@@ -101,6 +101,6 @@ $ ->
             $.each gists.data, (index, gist) ->
                 $('#gists tbody').append [
                     '<tr class="wow fadeIn" data-wow-delay="' + index / 20 + 's">'
-                    '<td> <a href="' + gist.html_url + '">' + Object.keys(gist.files)[0] + '</a> — ' + gist.description + '</td>'
+                        '<td> <a href="' + gist.html_url + '">' + Object.keys(gist.files)[0] + '</a> — ' + gist.description + '</td>'
                     '</tr>'
                 ].join('')

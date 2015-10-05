@@ -6,19 +6,19 @@ block header
 block content
     section#music
         header.container
-            h1 Mixtapes for most occasions
+            h1 My favourite design mixtape
         #controls
             .container
                 .row
-                    .col-sm-1
-                        img#cover
-                    .col-sm-3
+                    .col-sm-1.col-xs-2#cover
+                        img
+                    .col-sm-3.col-xs-4#buttons
                         i.fa.fa-fast-backward#prev
                         i.fa.fa-play#play
                         i.fa.fa-pause.hidden#pause
                         i.fa.fa-fast-forward#next
-                    .col-sm-8
-                        progress#progress(value="0", max="100")
+                    .col-sm-8.col-xs-6#progress
+                        progress#progressbar(value="0", max="100")
         .container#playlist
 
 block footer

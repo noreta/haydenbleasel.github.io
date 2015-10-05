@@ -20,7 +20,7 @@ $ ->
         if (id)
             if (sound)
                 sound.stop()
-            $('#progress').attr 'value', 0
+            $('#progressbar').attr 'value', 0
             self = $('.track[data-id="' + id + '"]')
             $('.track').removeClass 'playing'
             self.addClass 'playing'
@@ -47,9 +47,9 @@ $ ->
             if (track.streamable)
                 $('#playlist').append [
                     '<div class="track wow fadeIn" data-wow-delay="' + index / 20 + 's" data-id="' + track.id + '" data-format="' + track.original_format + '" data-cover="' + track.artwork_url + '">'
-                    '<span class="index">' + (index + 1) + '</span>'
-                    '<span class="title">' + track.user.username + ' - ' + track.title + '</span>'
-                    '<span class="plays">' + track.playback_count.numberWithCommas() + '</span>'
+                        '<span class="index">' + (index + 1) + '</span>'
+                        '<span class="title">' + track.user.username + ' - ' + track.title + '</span>'
+                        '<span class="plays">' + track.playback_count.numberWithCommas() + '</span>'
                     '</div>'
                 ].join('')
 
@@ -76,11 +76,11 @@ $ ->
     # Update the progress bar
     setInterval (->
         if (sound && sound._player && sound._player._currentPosition && sound._player._duration)
-            $('#progress').attr 'value', (sound._player._currentPosition / sound._player._duration * 100)
+            $('#progressbar').attr 'value', (sound._player._currentPosition / sound._player._duration * 100)
             if (sound._player._currentPosition == sound._player._duration)
                 play $('.playing').next('.track').data('id')
 
     ), 200
 
     # Affix the controls bar
-    $('#music').affix offset: top: $('#controls').offset().top - 81
+    $('#music').affix offset: top: $('#controls').offset().top - $('nav').outerHeight()

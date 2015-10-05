@@ -1,0 +1,52 @@
+.image-overlay {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    @media (max-width: 480px) {
+        margin-bottom: 15px;
+    }
+    &:hover .overlay {
+        opacity: 1;
+    }
+    img {
+        display: block;
+        width: 100%;
+        max-width: none;
+        border: 1px solid @faint;
+    }
+    .overlay {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.4s;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: fade(@black, 50%);
+        padding: 30px;
+        p, small {
+            font-family: @sans-serif;
+            color: @white;
+            line-height: 1.5;
+        }
+        p {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        small {
+            margin: 0;
+            display: block;
+            font-size: 12px;
+        }
+        .meta {
+            position: absolute;
+            left: 30px;
+            display: block;
+            right: 30px;
+            bottom: 30px;
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+}

@@ -20,7 +20,12 @@ $ ->
     # Wow...
     new WOW().init()
 
+    # Refresh the resolution tag
     setInterval (->
         pixels = $(document).width() * $(document).height()
         $('#resolution').text pixels.numberWithCommas()
     ), 1000
+
+    # Mobile menu toggle
+    $('#menu').click ->
+        $('body').toggleClass 'active'
