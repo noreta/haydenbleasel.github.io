@@ -19,11 +19,7 @@
         config = require('loadobjects').sync('config/'),
         info = require('./package.json'),
         header = '/*! Built with Catalyst. */',
-        staticFiles = gulp.src([
-            'build/**',
-            '!build/{vendor,vendor/**}',
-            '!build/*.html'
-        ], { dot: true }),
+        staticFiles = gulp.src([], { dot: true }),
         online = false;
 
     config.jade.locals = {
@@ -104,7 +100,7 @@
             .pipe($.replace('.html', ''))
             //.pipe($.injectString.before('</head>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />'))
             .pipe($.injectString.before('</head>', '<link rel="favicons" href="logo.png">'))
-            .pipe($.if(online, $.favicons(config.favicons)))
+            //.pipe($.if(online, $.favicons(config.favicons)))
             .pipe(assets)
             .pipe($.rev())
             .pipe(assets.restore())
@@ -156,15 +152,17 @@
     gulp.task('clean', function (next) {
         del([
             '*.{png,webapp,json,html,css,js,ico,txt,xml}',
-            'fonts/',
+            'build/*',
             '!gulpfile.js',
             '!package.json',
             '!bower.json',
-            'build/*',
             '!build/bower_components',
-            '!build/fonts',
-            '!build/logo.png'
-        ], next);
+        ]).then(function (paths) {
+            if (paths.length) {
+                $.util.log('Deleted files/folders:\n', paths.join('\n'));
+            }
+            return next();
+        });
     });
 
     gulp.task('browser-sync', function () {
