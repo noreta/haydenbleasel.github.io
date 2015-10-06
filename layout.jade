@@ -25,7 +25,6 @@ html(lang='en')
         link(rel='canonical', href='#{homepage}')
         link(rel='favicons', href='logo.png')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Playfair+Display')
-            
         link(rel='dns-prefetch', href='http://fonts.googleapis.com')
         link(rel='dns-prefetch', href='http://maps.googleapis.com')
         link(rel='dns-prefetch', href='http://connect.soundcloud.com')
@@ -33,10 +32,11 @@ html(lang='en')
         link(rel='dns-prefetch', href='https://api.dribbble.com')
         link(rel='dns-prefetch', href='https://api.github.com')
         link(rel='dns-prefetch', href='https://api.instagram.com')
-        
+        <!-- build:css styles.css -->
         <!-- bower:css -->
         <!-- endbower -->
-        link(rel='stylesheet', href='styles.css', inline)
+        link(rel='stylesheet', href='styles.css')
+        <!-- endbuild -->
         <!--[if lt IE 9]>
         script(src='vendor/html5shiv-printshiv.js', inline)
         <![endif]-->
@@ -90,9 +90,12 @@ html(lang='en')
                 |  pixels on this page.
             p Cover photos taken by 
                 a(href="http://www.maryannemade.com/") Maryanne Nguyen
-        <!-- bower:js -->
-        <!-- endbower -->
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC9FJte2Zre1nyzMFutrrbOiQBafdIDUMw')
         script(src='//connect.soundcloud.com/sdk-2.0.0.js')
-        script(src='scripts/main.js', inline)
+        <!-- build:js scripts/scripts.js -->
+        <!-- bower:js -->
+        <!-- endbower -->
+        script(src='scripts/main.js')
         block footer
+        <!-- endbuild -->
+        
