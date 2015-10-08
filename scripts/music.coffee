@@ -24,7 +24,7 @@ $ ->
             self = $('.track[data-id="' + id + '"]')
             $('.track').removeClass 'playing'
             self.addClass 'playing'
-            $('#cover').attr 'src', self.data('cover')
+            $('#cover img').attr 'src', self.data('cover')
             SC.stream '/tracks/' + id, (track) ->
                 sound = track
                 sound.play()

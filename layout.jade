@@ -23,7 +23,6 @@ html(lang='en')
         meta(property='twitter:image', content='logo.png')
         meta(property='twitter:url', content='#{homepage}')
         link(rel='canonical', href='#{homepage}')
-        link(rel='favicons', href='logo.png')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Playfair+Display')
         link(rel='dns-prefetch', href='http://fonts.googleapis.com')
         link(rel='dns-prefetch', href='http://maps.googleapis.com')
@@ -52,7 +51,7 @@ html(lang='en')
         
         nav.nav
             .container.clearfix
-                a#home(href="/") Hayden Bleasel
+                a#name(href="/") Hayden Bleasel
                 i.fa.fa-bars#menu
                 #sidebar
                     #links
@@ -62,23 +61,23 @@ html(lang='en')
                         a(href="/photos.html") Photos
                         a(href="/music.html") Music
                     #social
-                        a(href='https://twitter.com/haydenbleasel', target='_blank', alt='Twitter')
+                        a(href='https://twitter.com/haydenbleasel', target='_blank', data-platform='Twitter')
                             i.fa.fa-twitter
-                        a(href='https://instagram.com/hayden.bleasel', target='_blank', alt='Instagram')
+                        a(href='https://instagram.com/hayden.bleasel', target='_blank', data-platform='Instagram')
                             i.fa.fa-instagram
-                        a(href='https://dribbble.com/haydenbleasel', target='_blank', alt='Dribbble')
+                        a(href='https://dribbble.com/haydenbleasel', target='_blank', data-platform='Dribbble')
                             i.fa.fa-dribbble
-                        a(href='https://soundcloud.com/haydenbleasel', target='_blank', alt='SoundCloud')
+                        a(href='https://soundcloud.com/haydenbleasel', target='_blank', data-platform='SoundCloud')
                             i.fa.fa-soundcloud
-                        a(href='https://github.com/haydenbleasel', target='_blank', alt='Github')
+                        a(href='https://github.com/haydenbleasel', target='_blank', data-platform='Github')
                             i.fa.fa-github
-                        a(href='https://medium.com/@haydenbleasel', target='_blank', alt='Medium')
+                        a(href='https://medium.com/@haydenbleasel', target='_blank', data-platform='Medium')
                             i.fa.fa-medium
-                        a(href='https://angel.co/haydenbleasel', target='_blank', alt='AngelList')
+                        a(href='https://angel.co/haydenbleasel', target='_blank', data-platform='AngelList')
                             i.fa.fa-angellist
-                        a(href='http://twitch.tv/haydenbleasel', target='_blank', alt='Twitch')
+                        a(href='http://twitch.tv/haydenbleasel', target='_blank', data-platform='Twitch')
                             i.fa.fa-twitch
-                        a(href='https://steamcommunity.com/id/haydenbleasel', target='_blank', alt='Steam')
+                        a(href='https://steamcommunity.com/id/haydenbleasel', target='_blank', data-platform='Steam')
                             i.fa.fa-steam
         
         block content
@@ -92,7 +91,7 @@ html(lang='en')
                 a(href="http://www.maryannemade.com/") Maryanne Nguyen
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC9FJte2Zre1nyzMFutrrbOiQBafdIDUMw')
         script(src='//connect.soundcloud.com/sdk-2.0.0.js')
-        <!-- build:js scripts/scripts.js -->
+        <!-- build:js scripts.js -->
         <!-- bower:js -->
         <!-- endbower -->
         script(src='scripts/main.js')

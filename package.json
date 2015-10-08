@@ -47,6 +47,7 @@
     "gulp-uncss": "*",
     "gulp-useref": "*",
     "gulp-util": "*",
+    "gulp-w3cjs": "*",
     "is-online": "*",
     "loadobjects": "*",
     "pageres": "*",

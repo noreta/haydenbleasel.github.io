@@ -1,5 +1,7 @@
 $ ->
 
+    title = document.title
+
     # Create abc,def string
     Number::numberWithCommas =
     String::numberWithCommas = ->
@@ -29,3 +31,10 @@ $ ->
     # Mobile menu toggle
     $('#menu').click ->
         $('body').toggleClass 'active'
+
+    # Be a smartass
+    $(window)
+        .on 'blur', ->
+            document.title = 'You coming back or what?'
+        .on 'focus', ->
+            document.title = title

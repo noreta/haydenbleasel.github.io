@@ -43,7 +43,7 @@
             .pipe($.jade(config.jade))
             .pipe(wiredep(config.wiredep))
             .pipe($.specialHtml())
-            //.pipe($.if(online, $.w3cjs()))
+            .pipe($.if(online, $.w3cjs()))
             .pipe(gulp.dest('build/'));
     });
 
