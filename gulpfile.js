@@ -18,8 +18,8 @@
         $ = require('gulp-load-plugins')(),
         config = require('loadobjects').sync('config/'),
         info = require('./package.json'),
-        header = '/*! Built with Catalyst. */',
-        staticFiles = gulp.src([], { dot: true }),
+        header = '/*! This website is built on my own open-source build system - Catalyst (https://github.com/haydenbleasel/catalyst). */',
+        //staticFiles = gulp.src([], { dot: true }),
         online = false;
 
     config.jade.locals = {
@@ -43,14 +43,15 @@
             .pipe($.jade(config.jade))
             .pipe(wiredep(config.wiredep))
             .pipe($.specialHtml())
-            .pipe($.if(online, $.w3cjs()))
+            .pipe($.if(online, $.w3cjs())) /*$.w3cjs.reporter()*/
             .pipe(gulp.dest('build/'));
     });
 
     gulp.task('build:fonts', function () {
-        gulp.src([])
+        $.util.log('No files to copy.');
+        /*gulp.src([])
             .pipe($.fontmin(config.fontmin))
-            .pipe(gulp.dest('build/fonts'));
+            .pipe(gulp.dest('build/fonts'));*/
     });
 
     gulp.task('build:images', function () {
@@ -98,30 +99,31 @@
             .pipe($.robots(config.robots))
             .pipe($.humans(config.humans))
             .pipe($.replace('.html', ''))
-            //.pipe($.injectString.before('</head>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />'))
-            .pipe($.injectString.before('</head>', '<link rel="favicons" href="logo.png">'))
+            .pipe($.injectString.before('</head>', '\n<meta name="apple-mobile-web-app-capable" content="yes" />'))
+            .pipe($.injectString.before('</head>', '<link rel="favicons" href="images/logo.png">'))
             .pipe($.if(online, $.favicons(config.favicons)))
             .pipe(assets)
             .pipe($.rev())
             .pipe(assets.restore())
             .pipe($.useref())
             .pipe($.revReplace())
-            .pipe(gulp.dest('build/templates'));
+            .pipe(gulp.dest('build/templates/'));
     });
 
     gulp.task('dist:copy', function () {
-        staticFiles.pipe(gulp.dest('./'));
+        $.util.log('No files to copy.');
+        //staticFiles.pipe(gulp.dest('./'));
     });
 
     gulp.task('dist:templates', function () {
-        gulp.src('build/templates/index.html')
+        gulp.src('build/*.html')
             .pipe($.injectString.before('</head>', '<link rel="sitemap" href="' + path.join(info.homepage, 'sitemap.xml') + '">'))
             .pipe($.inlineSource(config.inlinesource))
             .pipe($.minifyInline())
             .pipe($.minifyHtml(config.minifyhtml))
-            .pipe(gulp.dest('test/dist/'))
+            .pipe(gulp.dest('../'))
             .pipe($.sitemap(config.sitemap))
-            .pipe(gulp.dest('test/dist/'));
+            .pipe(gulp.dest('../'));
     });
 
     gulp.task('dist:fonts', function () {
@@ -138,7 +140,7 @@
             .pipe($.autoprefixer())
             .pipe($.csso())
             .pipe($.bless())
-            .pipe(gulp.dest('./'));
+            .pipe(gulp.dest('../'));
     });
 
     gulp.task('dist:scripts', function () {
@@ -146,7 +148,7 @@
             .pipe($.stripDebug())
             .pipe($.uglify())
             .pipe($.header(header))
-            .pipe(gulp.dest('./'));
+            .pipe(gulp.dest('../'));
     });
 
     gulp.task('clean', function (next) {
@@ -221,12 +223,10 @@
 
     gulp.task('refresh', function (callback) {
         isOnline(function (error, connection) {
-            if (error) {
-                throw error;
-            }
             if (!connection) {
-                $.util.log('NOTE: Internet connection is currently down, W3C.js and Favicons are suppressed.');
+                $.util.log('NOTE: Internet connection is currently down, W3C.js and Favicons are suppressed.', error);
             }
+            online = connection;
             runSequence(['build:copy', 'build:templates', 'build:fonts', 'build:images', 'build:sprites', 'build:scripts'], 'build:styles', callback);
         });
     });
