@@ -134,7 +134,6 @@
     gulp.task('dist:styles', function () {
         gulp.src('build/*.css')
             .pipe($.header(header))
-            .pipe($.rwi(config.rwi))
             .pipe($.uncss(config.uncss))
             .pipe($.combineMediaQueries())
             .pipe($.autoprefixer())

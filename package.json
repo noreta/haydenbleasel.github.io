@@ -38,7 +38,6 @@
     "gulp-rev": "*",
     "gulp-rev-replace": "*",
     "gulp-robots": "*",
-    "gulp-rwi": "*",
     "gulp-sitemap": "*",
     "gulp-size": "*",
     "gulp-special-html": "*",
