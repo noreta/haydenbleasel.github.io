@@ -275,6 +275,22 @@ h1, h2, .button, #count {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+input {
+	width: 100%;
+	display: block;
+	padding: 6px 12px;
+	font-family: Georgia, serif;
+	&[type="submit"] {
+		width: auto;
+		display: inline-block;
+		margin-top: 10px;
+		background: @gold;
+		padding: 12px 24px;
+		color: #FFFFFF;
+		border: none;
+	}
+}
+
 hr {
 	content: "";
 	display: block;

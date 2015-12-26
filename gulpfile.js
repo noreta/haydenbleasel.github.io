@@ -55,7 +55,7 @@
             .pipe($.colorguard({ logOk: true }))
             .pipe($.header(header))
             .pipe($.autoprefixer())
-            .pipe($.combineMediaQueries())
+            //.pipe($.combineMediaQueries())
             .pipe($.csso())
             .pipe(gulp.dest('build/'))
             .pipe(sync.reload({ stream: true, once: true }));
